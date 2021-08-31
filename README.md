@@ -11,7 +11,7 @@
 2. Using your terminal, change the directory to the Coralyze-Frontend folder (e.g. Windows | cd C:\Users\John\Desktop\Coralyze-Frontend)
 3. Type in terminal 'npm start'
 4. This should start up the frontend website.
-5. 
+
 ## Backend:
 1. Open up your OS terminal
 2. Using your terminal, change the directory to the Coralyze-Frontend folder (e.g. Windows | cd C:\Users\John\Desktop\Coralyze-Frontend)

@@ -1,0 +1,92 @@
+.main_section {
+  /* the below settings ensure the page fits on the RHS of the sidebar */
+  position: relative;
+  top: 0px;
+  left: 250px;
+  height: auto;
+  overflow-y: hidden;
+  width: calc(100% - 250px);
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 2%;
+}
+
+.main_section-header {
+  font-family: 'Gilroy-Bold';
+  color: #237c9a;
+  /* display: inline-block; */
+  margin: 10px;
+  /* text-transform: uppercase; */
+}
+
+@media screen and (max-width: 960px) {
+  .main_section {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+  }
+}
+
+.notif_box {
+  /* max-height: 80%; */
+  /* overflow-y: scroll; */
+  margin: 10px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: start;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.notif {
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  background-color: #fafafa;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  width: auto;
+  transition: all 0.5s ease;
+}
+
+.notif:hover {
+  color: #ff6543;
+  background: #eff0f2;
+  transition: all 0.3s ease;
+}
+
+.notif a {
+  font-family: 'Gilroy-Regular';
+  text-decoration: none;
+  font-size: medium;
+  font-weight: 350;
+  color: #237c9a;
+  transition: all 0.3s ease;
+}
+
+.notif:hover a {
+  color: #ff6543;
+}
+
+.subject {
+  font-family: 'Gilroy-Bold';
+  color: #237c9a;
+  font-size: large;
+  /* font-weight: 600; */
+  transition: all 0.3s ease;
+}
+
+.description {
+  font-family: 'Gilroy-Light';
+  color: gray;
+  font-size: small;
+}

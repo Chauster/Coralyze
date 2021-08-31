@@ -1,0 +1,82 @@
+.CTA {
+  color: #fff;
+}
+
+.CTA__intro {
+  padding: 10%;
+}
+
+.CTA__intro h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CTA__message p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.CTA__cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CTA__cta a.button {
+  padding: 0.875rem 2.1875rem;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+  background: #007cff;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.CTA__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CTA__image img {
+  width: 50%;
+}
+
+@media (min-width: 64em) {
+  .CTA__description {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+/*# sourceMappingURL=CTA.css.map */

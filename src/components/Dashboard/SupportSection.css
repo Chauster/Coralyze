@@ -1,0 +1,142 @@
+.main_section {
+  /* the below settings ensure the page fits on the RHS of the sidebar */
+  position: relative;
+  top: 0px;
+  left: 250px;
+  height: auto;
+  color: var(--black);
+  width: calc(100% - 250px);
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 2%;
+}
+
+.main_section h3 {
+  font-family: 'Gilroy-Bold';
+  color: #3e74ff;
+  display: inline-block;
+  margin: 10px;
+  /* text-transform: uppercase; */
+}
+
+@media screen and (max-width: 960px) {
+  .main_section {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+  }
+}
+
+.ticket_box {
+  max-height: 80%;
+  overflow-y: scroll;
+  margin: 10px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: start;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket_item {
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  color: #237c9a;
+  background-color: #fafafa;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  width: auto;
+  transition: all 0.5s ease;
+}
+
+.ticket_item:hover {
+  color: #ff6543;
+  background: #eff0f2;
+  transition: all 0.3s ease;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_inputs {
+  margin-bottom: 0.5rem;
+  width: 90%;
+  padding: 2px;
+}
+
+.form_inputs p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.form_label {
+  color: #000;
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+.form_input {
+  position: relative;
+  background: #fff;
+  display: block;
+  padding-left: 10px;
+  /* outline: none;
+  border-radius: 2px; */
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+  /* border: none; */
+}
+
+.form_inputs textarea {
+  resize: none;
+  height: 8rem;
+  font-size: 0.8rem;
+  padding-top: 10px;
+}
+
+.form_btn {
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+}
+@media (min-width: 25.875em) {
+  .form_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 40em) {
+  .form_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form_input:required {
+  /* border: none; */
+  border-bottom: 2px solid rgb(89, 211, 105);
+}
+
+.form_input:required:invalid {
+  border-bottom: 2px solid rgb(212, 52, 52);
+}

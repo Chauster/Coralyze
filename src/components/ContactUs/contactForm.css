@@ -1,0 +1,135 @@
+.form__container {
+  position: relative;
+  background: var(--ltbackground);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+@media (min-width: 64em) {
+  .form__container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 5%;
+  }
+}
+
+.form__content-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.form__content-left img {
+  width: 60%;
+}
+
+.form__content-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.form__content-right h1 {
+  color: var(--primary-1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+}
+
+.form h1 {
+  font-family: 'Gilroy-Bold';
+  font-size: 2.5rem;
+  /* text-transform: uppercase; */
+  text-align: start;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.form__inputs {
+  margin-bottom: 0.5rem;
+  width: 80%;
+}
+
+.form__inputs textarea {
+  resize: none;
+  height: 8rem;
+  font-size: 0.8rem;
+}
+
+.form__inputs p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.form__label {
+  font-family: 'Gilroy-Regular';
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+.form__input {
+  font-family: 'Gilroy-Light';
+  display: block;
+  padding-left: 10px;
+  outline: none;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(76, 154, 255);
+}
+
+.form__inputs textarea {
+  padding-top: 10px;
+}
+
+.form__input::placeholder {
+  color: #595959;
+  font-size: 12px;
+}
+
+.form__btn {
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+}
+@media (min-width: 25.875em) {
+  .form__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 40em) {
+  .form__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

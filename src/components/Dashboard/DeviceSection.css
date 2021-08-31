@@ -1,0 +1,85 @@
+.main__container {
+  /* the below settings ensure the page fits on the RHS of the sidebar */
+  position: relative;
+  top: 0px;
+  left: 250px;
+  height: auto;
+  width: calc(100% - 250px);
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 2%;
+}
+
+.main__container h3 {
+  font-family: 'Gilroy-Bold';
+  display: inline-block;
+  color: #237c9a;
+  margin: 10px;
+  /* text-transform: uppercase; */
+}
+
+@media screen and (max-width: 960px) {
+  .main__container {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+  }
+}
+
+.element__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.element__item {
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  height: auto;
+  width: auto;
+  color: #237c9a;
+  background-color: #fafafa;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  text-align: center;
+  font-size: medium;
+  transition: all 0.5s ease;
+}
+
+.element__item:hover {
+  background: #eff0f2;
+  transition: all 0.3s ease;
+}
+
+.element__item a {
+  text-decoration: none;
+  font-weight: 350;
+  color: #237c9a;
+  transition: all 0.3s ease;
+}
+
+.element__item:hover a {
+  color: #ff6543;
+}
+
+.device__icons {
+  height: 20px;
+  min-width: 40px;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.device__info {
+  padding: 5px;
+  display: flex;
+  color: #000;
+  justify-content: center;
+  font-size: small;
+  transition: all 0.3s ease;
+}

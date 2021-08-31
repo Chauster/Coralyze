@@ -1,0 +1,166 @@
+.card {
+  background-color: var(--ltbackground);
+  text-align: center;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  height: auto;
+}
+
+@media (min-width: 40em) {
+  .card {
+    text-align: left;
+  }
+}
+.container__card__intro {
+  display: flex;
+  padding-bottom: 10%;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+
+  h1 {
+    font-family: 'Gilroy-Bold';
+  }
+}
+@media (min-width: 40em) {
+  .container__card__intro {
+    display: flex;
+    padding-bottom: 10%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 64em) {
+  .container__card__intro {
+    display: flex;
+    padding-bottom: 10%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.card__intro {
+  color: #3e74ff;
+}
+@media (min-width: 40em) {
+  .card__intro {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #3e74ff;
+  }
+  h1 {
+    font-size: 2.275rem;
+    text-align: center;
+  }
+}
+@media (min-width: 64em) {
+  .card__intro {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #3e74ff;
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+.card__intro__image img {
+  width: 100%;
+}
+
+@media (min-width: 40em) {
+  .card__intro__image img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (min-width: 64em) {
+  .card__intro__image img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (min-width: 40em) {
+  .card__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card__item {
+  padding: 0.9375rem;
+}
+
+@media (min-width: 40em) {
+  .card__item {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 64em) {
+  .card__item {
+    flex: 1;
+  }
+}
+
+.card__image {
+  margin-bottom: 1.875rem;
+
+
+}
+.card__image img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 5px solid #777777;
+}
+
+@media (min-width: 64em) {
+  .card__image {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.card__title {
+  font-family: 'Gilroy-Bold';
+  font-size: 1.25rem;
+  // font-weight: bold;
+  line-height: 1.15;
+  color: var(--primary-2);
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.card__roletitle {
+  font-family: 'Gilroy-Medium';
+  font-size: 1.25rem;
+  // font-weight: bold;
+  line-height: 1.15;
+  color: var(--primary-1);
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+@media (min-width: 64em) {
+  .card__title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .card__roletitle {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.card__description {
+  font-family: 'Gilroy-Light';
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--black);
+}

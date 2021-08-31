@@ -1,0 +1,21 @@
+.faqs__container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.faqs__container h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+.faqs__list {
+  list-style: none;
+}
+
+.faqs__item {
+  padding: 18px;
+}

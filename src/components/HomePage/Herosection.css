@@ -1,0 +1,179 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  font-family: Montserrat;
+} */
+@media (min-width: 64em) {
+  .hero {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+}
+
+.hero__image {
+  position: relative;
+  background-image: url('../../images/blob-desktop.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 17.5rem;
+}
+@media (min-width: 40em) {
+  .hero__image {
+    background-size: 43%;
+  }
+}
+@media (min-width: 64em) {
+  .hero__image {
+    flex: 3;
+    order: 2;
+    min-height: 41rem;
+    background-size: 70%;
+  }
+}
+
+.hero__image::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../images/people.svg');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+@media (min-width: 40em) {
+  .hero__image::before {
+    background-size: 35%;
+  }
+}
+@media (min-width: 64em) {
+  .hero__image::before {
+    background-size: 70%;
+  }
+}
+
+.hero__text {
+  text-align: left;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+@media (min-width: 40em) {
+  .hero__text {
+    flex: 2;
+    order: 1;
+    text-align: justify;
+  }
+}
+@media (min-width: 64em) {
+  .hero__text {
+    flex: 2;
+    order: 1;
+    text-align: left;
+  }
+}
+
+.hero__text h1 {
+  font-family: 'Gilroy-Bold';
+  font-size: 2.31rem;
+  line-height: 1.1;
+  color: var(--primary-1);
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+@media (min-width: 25.875em) {
+  .hero__text h1 {
+    text-align: center;
+  }
+}
+@media (min-width: 40em) {
+  .hero__text h1 {
+    text-align: center;
+  }
+}
+@media (min-width: 64em) {
+  .hero__text h1 {
+    text-align: left;
+    font-size: 3.25rem;
+  }
+}
+
+.hero__text p {
+  font-family: 'Gilroy-Light';
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+  color: #6a707e;
+}
+
+.hero__cta {
+  padding: 20px;
+  border-radius: 5px;
+  background: #ff4a1c;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+}
+.hero__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 40em) {
+  .hero__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 64em) {
+  .hero__button {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+}
+
+.mouse__container {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mouse {
+  width: 30px;
+  height: 60px;
+  border: 4px solid #fff;
+  border-radius: 60px;
+}
+
+.mouse::before {
+  content: '';
+  width: 4px;
+  height: 12px;
+  position: absolute;
+  top: 15px;
+  background: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 60px;
+  opacity: 1;
+  animation: mousescroll 2s infinite;
+}
+
+@media (max-width: 1024px) {
+  .mouse__container {
+    display: none;
+  }
+}
+@keyframes mousescroll {
+  from {
+    opacity: 1;
+    top: 15px;
+  }
+  to {
+    opacity: 0;
+    top: 40px;
+  }
+}

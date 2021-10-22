@@ -19,6 +19,7 @@ Coralyze is an application that presents real-time IoT data visualisation based 
 This project contains the frontend and backend user interface Coralyze.
 ### Repository Structure
 
+```bash
 ├───controllers
 │       auth.js
 │       private.js
@@ -310,7 +311,7 @@ This project contains the frontend and backend user interface Coralyze.
 └───utilities
         errorResponse.js
         sendEmail.js
-
+```
 
 ### Project Status
 These are the following screens and functionalities present in the application currently:

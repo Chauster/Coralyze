@@ -1,7 +1,7 @@
 # Coralyze
 Coralyze is an application that presents real-time IoT data visualisation based on the detections captured by IoT devices. Coralyze provides a fast analytics service that enables users to view insightful data that offers a comprehensive overview of their device. These analytics can be viewed via a sophisticatedly designed website that includes a multiple of data breakdowns. A test case for this application example can be utilised in COVID-19 scenarios, where we aim to provide a solution that is aligned with this directive for the purpose of monitoring and safety of others. The application was created in parallel by 3 core teams, AI Engineers, Full Stack Developers, and Software Engineers. We aim to facilitate the interaction between IoT devices, databases and websites collaborated by cross-functional teams, allowing for consumers to effectively control and monitor the safety of indoor gatherings.
 
-##Technologies Used:
+## Technologies Used:
 - Python(TensorFlow)
 - Google Coral
 - MongoDB Atlas

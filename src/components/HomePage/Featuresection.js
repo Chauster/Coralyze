@@ -1,22 +1,75 @@
 import React from 'react';
 import './Feature.scss';
+import gsap from 'gsap';
 import image from '../../images/featurev3.svg';
+import feature1 from '../../images/Group 13.png';
+import feature2 from '../../images/PhoneMockup.png';
+import feature3 from '../../images/Feature3.svg';
 const Featuresection = () => {
+  let f1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.container__feature__intro',
+      start: 'center bottom',
+      end: 'top top',
+      scrub: 1,
+    }
+  });
+
+  // gsap.to('.feature__intro__image', 1.5, {
+  //   x: 200,
+  //   opacity: 1,
+  // })
+
   return (
-    <div>
       <section class="feature">
         <div class="feature__content">
           <div class="container__feature__intro">
+            <div class="feature__intro">
+              <h2>Personalised Dashboard</h2>
+              <p>Our dashboard provides analytics of connected IoT devices and lets you customise features that tailor to your needs seamlessly.</p>
+                <h4>Features:</h4>
+              <ul class="feature__intro__list">
+                <li class="feature__intro__list__item">Intrinsic Analytics</li>
+                <li class="feature__intro__list__item">Real Time Data Visualisation</li>
+              </ul>
+            </div>
             <div class="feature__intro__image">
-              <img src={image} alt="feature_intro"></img>
+              <img src={feature1} alt="feature_intro"></img>
+            </div>
+          </div>
+          <div class="container__feature__intro">
+            <div class="feature__intro__image">
+              <img src={feature2} alt="feature_intro"></img>
             </div>
             <div class="feature__intro">
-              <h1>What coralyze offers.</h1>
+              <h2>Mobile-Friendly, <br/>access from anywhere</h2>
+              <p>Our team have engineered Coralyze to allow users to access our dashboard from any device, and seamlessly view your IoT devices. We currently support some Android and iOS devices.</p>
+              <h4>Compatiable for:</h4>
+              <ul class="feature__intro__list">
+                <li class="feature__intro__list__item">Android</li>
+                <li class="feature__intro__list__item">iOS</li>
+                <li class="feature__intro__list__item">Desktop</li>
+              </ul>
+            </div>
+          </div>
+          <div class="container__feature__intro">
+            <div class="feature__intro">
+              <h2>Your assistant, your rules. <br/>Take control.</h2>
+              <p>With our team utilising multiple model datasets , users will be able to create their own custom rulesets at minimal configuration. Users are given the freedom to alter their own rulesets at any moment to integrate new appliances and devices.</p>
+                <h4>Configuration:</h4>
+              <ul class="feature__intro__list">
+                <li class="feature__intro__list__item">Age Detections</li>
+                <li class="feature__intro__list__item">Gender Detections</li>
+                <li class="feature__intro__list__item">Mask Detections</li>
+              </ul>
+            </div>
+            <div class="feature__intro__image">
+              <img src={feature3} alt="feature_intro"></img>
             </div>
           </div>
 
           <div class="feature__grid">
-            <div class="feature__item">
+            {/* <div class="feature__item">
               <div class="feature__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -112,9 +165,9 @@ const Featuresection = () => {
                 COVID-19 Hand wash tracking.<br></br>
                 and many more.<br></br>
               </div>
-            </div>
+            </div> */}
 
-            <div class="feature__item">
+            {/* <div class="feature__item">
               <div class="feature__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -132,11 +185,10 @@ const Featuresection = () => {
                 perfect for users who desire smooth interactivity with the
                 device.
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
-    </div>
   );
 };
 

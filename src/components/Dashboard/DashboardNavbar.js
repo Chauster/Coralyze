@@ -1,21 +1,40 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './DashboardNavbar.scss';
 import { Link } from 'react-router-dom';
 import { RiDashboardLine } from 'react-icons/ri';
 import { BiDevices, BiSupport, BiLogOut } from 'react-icons/bi';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import { IoSettingsOutline } from 'react-icons/io5';
-import logo from '../../images/logo-2.png';
+import logo from '../../images/logo-white.svg';
 
 const DashboardNavbar = () => {
+  const history = useHistory();
+  const username = localStorage.getItem('username');
+  const Logout = (event) => {
+    event.preventDefault();
+
+    const removeUserSession = () => {
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('clientID');
+      localStorage.removeItem('username');
+      history.push('/');
+    }
+    removeUserSession();
+
+  }
   return (
     <div>
       <nav class="dashnavbar">
-        {/* <div class="dashnavbar__logo">
+        <div class="dashnavbar__logo">
           <Link to="/dashboard">
-            <img src={logo} alt="Coralyze Logo"></img>
+            <img src={logo} alt="Coralyze Logo" width="150px" height="50px"></img>
           </Link>
-        </div> */}
+        </div>
+        <div class="dashnavbar__profile">
+            <h4>Welcome</h4>
+          <h5 className="">{username}</h5>
+        </div>
         <ul class="dashnavbar__links">
           <li>
             <Link to="/dashboard">
@@ -24,11 +43,17 @@ const DashboardNavbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/devicemanagement">
+              <BiDevices class="dashnavbar__links__icon" />
+              <span class="dashnavbar__links__label">Device Management</span>
+            </Link>
+          </li>
+          {/* <li>
             <Link to="/devices">
               <BiDevices class="dashnavbar__links__icon" />
               <span class="dashnavbar__links__label">Devices</span>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/notifications">
               <IoMdNotificationsOutline class="dashnavbar__links__icon" />
@@ -41,17 +66,17 @@ const DashboardNavbar = () => {
               <span class="dashnavbar__links__label">Settings</span>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/support">
               <BiSupport class="dashnavbar__links__icon" />
               <span class="dashnavbar__links__label">Support</span>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/">
               {/* to be changed to logout page or response */}
               <BiLogOut class="dashnavbar__links__icon" />
-              <span class="dashnavbar__links__label">Logout</span>
+              <span class="dashnavbar__links__label" onClick={Logout}>Logout</span>
             </Link>
           </li>
         </ul>

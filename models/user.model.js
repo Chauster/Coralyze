@@ -28,10 +28,31 @@ const userSchema = new Schema(
       // unique: true,
       // trim: true,
     },
-    // dob: {
-    //   type: Date,
-    //   required: true,
-    // }
+    chart_data:
+      [
+        {
+          _id: false,
+          unique: false,
+          male: 0,
+          female: 0,
+          month: 0,
+          detections: 0,
+          agegroup: 0,
+          gender: 0,
+        },
+      ],
+    device_data:
+      [
+        {
+          name: {
+            type: String,
+          },
+          ip_add: {
+            type: String,
+          }
+        },
+      ]
+    
   },
   {
     timestamps: true,
@@ -70,6 +91,19 @@ userSchema.methods.getResetPasswordToken = function() {
   this.resetPasswordExpire = Date.now() + 10 * (60 * 1000); // Initialises the resetPasswordExpire field in MongoDB
   return resetToken;
 };
+
+userSchema.methods.getUserId = function() {
+  return this._id;
+}
+
+userSchema.methods.getDashboardData = function() {
+  return this.chart_data;
+}
+
+userSchema.methods.getDeviceData = function() {
+  return this.device_data;
+}
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;

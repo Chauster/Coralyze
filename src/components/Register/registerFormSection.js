@@ -128,6 +128,26 @@ const RegisterFormSection = () => {
       
       localStorage.setItem("authToken", data.token);
 
+      const { test } = await axios
+      .post('/users/insertDefaultChartData', {username}, config)
+      .catch(function (error) {
+        if(error.response) {
+          // testing
+          console.log(error.response.test);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
+
+
+
+
+
+
       history.push("/");
     // } catch (error) {
     //   console.log(error.response.status);
@@ -208,7 +228,7 @@ const RegisterFormSection = () => {
               type="text"
               name="username"
               className="form__input"
-              placeholder="Enter your username"
+              placeholder="Enter a username"
               value={username}
               onChange={(handleIDChange, handleUsernameChange)}
             />
@@ -229,7 +249,7 @@ const RegisterFormSection = () => {
               type="password"
               name="password"
               className="form__input"
-              placeholder="Enter your password"
+              placeholder="Enter a password"
               value={password}
               onChange={handlePasswordChange}
             />
@@ -297,7 +317,7 @@ const RegisterFormSection = () => {
           <div class="form__confirm">
             <div class="form__confirm__tos">
               <p>
-                By signing up, I accept the Inject DevOps <a href="/tos">Terms of Service</a> and acknowledge the <a href="/policy">Privacy Policy</a>.
+                By signing up, I accept the Inject DevOps <a href="/tos">Terms of Service</a> and acknowledge the <a href="/privacypolicy">Privacy Policy</a>.
               </p>
             </div>
           </div>

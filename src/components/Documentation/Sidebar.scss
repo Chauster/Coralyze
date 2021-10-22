@@ -1,4 +1,4 @@
-.navbar {
+.sidebar {
   position: fixed;
   padding-top: 50px;
   min-width: 290px;
@@ -8,10 +8,12 @@
   font-size: 1rem;
   background-color: var(--white);
   color: #3e74ff;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   h3 {
     font-family: 'Gilroy-Bold';
-    padding-left: 30px;
     padding-bottom: 10px;
     border-bottom: 2px solid black;
   }
@@ -33,79 +35,30 @@
     display: block;
     padding: 5px 30px;
     text-decoration: none;
-    color: var(--primary-3);
+    color: #373e42;
     cursor: pointer;
   }
 
   a:hover {
     color: #3e74ff;
+    background: #f5f8fa;
+    border-left: 4px solid #2697ed;
+    font-weight: 600;
   }
 
   &__device {
     padding: 5px 30px;
-    color: var(--primary-3);
+    color: #373e42;
     cursor: pointer;
-  }
-  &__list__item {
-    input[type='checkbox'] ~ ul {
-      height: 0;
-      transform: scaleY(1);
-    }
-    input[type='checkbox']:checked ~ ul {
-      height: 100%;
-    }
-    input[type='checkbox'] {
-      position: absolute;
-      display: none;
-    }
-    input[type='checkbox']:checked + label {
-      color: #3e74ff;
-    }
-    &__ul {
-      &__li {
-        overflow: hidden;
-        &:first-child::before {
-          height: calc(100% + 50px);
-          top: -7px;
-        }
-
-        &::before {
-          content: '';
-          width: 2px;
-          height: 100%;
-          position: absolute;
-          top: 0px;
-          left: 6px;
-          background: #dedede;
-          margin-left: 50px;
-        }
-
-        &::after {
-          content: '';
-          width: 14px;
-          height: 14px;
-          position: absolute;
-          top: 14px;
-          left: 0;
-          border-radius: 20%;
-          background: #3e74ff;
-          z-index: 10;
-          margin-left: 50px;
-        }
-        a {
-          padding: 11px;
-          padding-left: 70px;
-        }
-      }
-    }
   }
 }
 @media (max-width: 815px) {
-  .navbar {
+  .sidebar {
     background-color: var(--ltbackground);
     position: relative;
     top: 70px;
-    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin: 0;
     width: 100%;
     max-height: 275px;

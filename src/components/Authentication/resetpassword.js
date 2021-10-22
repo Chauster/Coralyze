@@ -73,7 +73,7 @@ try {
     }
 
     if(error.response.status === 400) {
-      setError("Password reset process has expired, you may have already resetted your password or unsucessfully completed this process in under 10 minutes. Please request another password reset.");
+      setError("Password reset process has expired, you may have already resetted your password or unsuccessfully completed this process in under 10 minutes. Please request another password reset.");
     }
   });
   setSuccess(data.data);

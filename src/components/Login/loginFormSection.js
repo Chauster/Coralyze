@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import { Button } from '../Button';
 import { IoPersonCircle } from 'react-icons/io5';
 import { RiLockPasswordLine } from 'react-icons/ri';
-import rightimage from '../../images/loginrightimage.svg';
+import rightimage from '../../images/login.png';
+
 // import './loginFormSection.css'; REPLACED BY SCSS
 import './loginFormSection.scss';
 
@@ -14,11 +15,11 @@ const LoginFormSection = () => {
   const [error, setError] = useState('');
   const history = useHistory();
   
-  // useEffect(() => {
-  //   if (localStorage.getItem("authToken")) {
-  //     history.push("/dashboard");
-  //   }
-  // }, [history]);
+  useEffect(() => {
+    if (localStorage.getItem("authToken")) {
+      history.push("/dashboard");
+    }
+  }, [history]);
 
   let handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -30,6 +31,7 @@ const LoginFormSection = () => {
 
   let handleSubmit = async (event) => {
     event.preventDefault();
+
 
     const user = {
       username: username,
@@ -43,10 +45,10 @@ const LoginFormSection = () => {
     };
 
     try {
-      const { data } = await axios.post('/users/login', { username, password}, config);
-
+      const { data } = await axios.post('/users/login', { username, password }, config);
+      console.log(data);
       localStorage.setItem('authToken', data.token);
-
+      localStorage.setItem('username', username); // testing
       history.push("/dashboard");
 
     } catch (error) {
@@ -56,6 +58,19 @@ const LoginFormSection = () => {
       }, 5000);
       return setError("Invalid credentials");
     }
+
+    try {
+      const { data } = await axios.post('/users/clientID', { username }, config);
+      localStorage.setItem('clientID', data.clientID);
+    } catch (error) {
+      setError(error?.response?.data.error);
+      setTimeout(() => {
+        setError('');
+      }, 5000);
+      return setError("Could not retrieve client id");
+    }
+
+
     // for testing purposes
     // console.log(user);
 
@@ -102,7 +117,7 @@ const LoginFormSection = () => {
                 id="name"
                 type="text"
                 name="name"
-                placeholder="Enter username"
+                placeholder="Username"
                 value={username}
                 onChange={handleUsernameChange}
               />
@@ -119,14 +134,14 @@ const LoginFormSection = () => {
               </div>
               <input
                 required
-                minLength="8"
-                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                minLength="1"
+                // pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
                 title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
                 className="form__input__pw"
                 id="password"
                 type="password"
                 name="password"
-                placeholder="Enter password"
+                placeholder="Password"
                 value={password}
                 onChange={handlePasswordChange}
               />

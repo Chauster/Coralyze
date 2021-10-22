@@ -2,17 +2,17 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  padding: 5%;
+  padding: 20%;
   width: auto;
   height: 90vh;
-  background-color: var(--ltbackground);
+  background-color: var(--white);
 
   .form {
     @media (min-width: 64em) {
-      background-color: #fff;
+      background-color:#3e74ff;
     }
-    border-radius: 30px;
     &__left {
+      background-color: var(--ltbackground);
       @media (min-width: 64em) {
         padding: 10%;
         grid-area: left;
@@ -42,16 +42,17 @@
     &__input {
       width: 360px;
       margin-bottom: 2rem;
-      border: 1px solid;
-      border-radius: 10px;
+      border: 2px solid;
+      border-radius: 4px;
       padding: 10px;
       background-color: rgb(255, 255, 255);
       border-color: rgb(76, 154, 255);
+      
     }
     &__input__pw {
       width: 360px;
-      border: 1px solid;
-      border-radius: 10px;
+      border: 2px solid;
+      border-radius: 4px;
       padding: 10px;
       background-color: rgb(255, 255, 255);
       border-color: rgb(76, 154, 255);
@@ -65,6 +66,7 @@
       
     }
     &__right {
+      background-color: #3e74ff;
       @media (min-width: 64em) {
         grid-area: right;
         padding: 5%;
@@ -100,6 +102,10 @@
           width: 500px;
           background: #fff;
         }
+        &__input__pw {
+          width: 500px;
+          background: #fff;
+        }
         &__login {
           display: flex;
           align-items: center;
@@ -130,7 +136,7 @@
         &__left {
           grid-area: middle;
           background: none;
-          padding: 25%;
+          padding: 20%;
           margin: 0;
         }
         &__right {
@@ -143,12 +149,14 @@
           padding-left: 20%;
         }
         &__inputs {
-          padding: 5%;
         }
         &__input {
           padding: 5%;
           width: 260px;
           background: #fff;
+        }
+        &__input__pw {
+          width: 260px;
         }
         &__login {
           display: flex;
@@ -175,3 +183,107 @@
   }
 }
 
+.test {
+      -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+  &__wrapper {
+    flex-direction: row;
+    flex-grow: 1;
+    max-width: 100%;
+    min-width: 100%;
+
+    &__inner {
+    position: relative;
+    background: #f9f9f9;
+    padding: 10.474337872213077rem 5.985335926978902rem 5.985335926978902rem;
+    color: #111;
+    align-items: center;
+    justify-content: flex-start;
+    }
+
+    &__header {
+      margin-bottom: 3rem;
+      max-width: 100%;
+    }
+
+    &__forms {
+      flex-grow: 1;
+      max-width: 100%;
+      justify-content: space-between;
+      align-content: center;
+      width: 100%;
+      flex-direction: column;
+      display: flex;
+    }
+    &__container {
+    background: rgba(126,126,126,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    color: #525252;
+    position: relative;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(126,126,126,0.1);
+    border-radius: 4px;
+    background-clip: padding-box;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 100%;
+    padding: 0;
+
+      &__field {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 100%;
+      }
+      &__input {
+        font-weight: 700;
+        letter-spacing: 0;
+        background:transparent;
+        line-height: 1.5em;
+        width: 100%;
+        outline: none;
+        border: 2px transparent;
+        display: block;
+        color: transparent;
+      }
+      &__label {
+        pointer-events: none;
+        position: absolute;
+        transform-origin: top left;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        left: 1.6em;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.364207691156667rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        line-height: 100%;
+      }
+      &__span {
+        opacity: 0;
+        top: 1.496333981744725rem;
+        left: 1.496333981744725rem;
+        position: absolute;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(0.75);
+        pointer-events: none;
+      }
+    }
+  }
+
+}

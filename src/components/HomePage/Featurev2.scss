@@ -1,0 +1,104 @@
+.newfeature{
+    height: auto;
+    // padding-left: 10%;
+    // padding-right: 10%;
+    margin: 0 auto;
+    max-width: 1280px;
+    margin-top: 1rem;
+    margin-bottom: 20rem;
+    &__container {
+    }
+
+    &__cards__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        // gap: 10em;
+        max-width: 1,143px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 1908px) {
+        .newfeature__cards__wrapper {
+            gap: 2em;
+        }
+      }
+      @media (min-width: 1909px) {
+        .newfeature__cards__wrapper {
+            gap: 5em;
+        }
+      }
+
+    &__card__one {
+        display: flex;
+        flex: 1 1 33%;
+        min-width: 265px;
+        max-width: 365px;
+        flex-direction: column;
+        padding-left: 33px;
+        padding-top: 29px;
+        padding-right: 33px;
+        padding-bottom: 32px;
+        border-radius: 5px;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.08), 10px 15px 12px rgba(0,0,0,0.08);
+
+        .card__one__title {
+            padding-bottom: 1rem;
+        }
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+    &__card__two {
+        display: flex;
+        flex: 1 1 33%;
+        min-width: 265px;
+        max-width: 365px;
+        flex-direction: column;
+        padding-left: 33px;
+        padding-top: 29px;
+        padding-right: 33px;
+        padding-bottom: 32px;
+        border-radius: 5px;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.08), 10px 15px 12px rgba(0,0,0,0.08);
+
+        .card__two__title {
+            padding-bottom: 1rem;
+        }
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+    &__card__three {
+        display: flex;
+        flex: 1 1 33%;
+        min-width: 265px;
+        max-width: 365px;
+        flex-direction: column;
+        padding-left: 33px;
+        padding-top: 29px;
+        padding-right: 33px;
+        padding-bottom: 32px;
+        border-radius: 5px;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.08), 10px 15px 12px rgba(0,0,0,0.08);
+
+        .card__three__title {
+            padding-bottom: 1rem;
+        }
+        
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+}

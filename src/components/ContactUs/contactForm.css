@@ -1,6 +1,6 @@
 .form__container {
   position: relative;
-  background: var(--ltbackground);
+  background: var(--white);
   color: var(--black);
   display: flex;
   flex-direction: column;

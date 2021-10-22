@@ -4,7 +4,7 @@
   align-items: center;
   width: auto;
   height: 91vh;
-  background-color: var(--ltbackground);
+  background-color: var(--white);
 
   .form {
     @media (min-width: 64em) {
@@ -61,7 +61,7 @@
       padding-right: 10px;
     }
     &__right {
-      height: 50vh;
+      height: 56vh;
       margin: 0;
       box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10);
 

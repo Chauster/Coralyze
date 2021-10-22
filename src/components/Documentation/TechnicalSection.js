@@ -11,7 +11,7 @@ const TechnicalSection = () => {
   return (
     <div>
       <div class="technical">
-        <h1>Coralyze technical documentation.</h1>
+        {/* <h1>Coralyze technical documentation.</h1> */}
         <div class="technical__content" id="Introduction">
           <h2>Introduction.</h2>
           <article>

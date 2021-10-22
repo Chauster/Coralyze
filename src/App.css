@@ -23,6 +23,11 @@
   src: url('fonts/Gilroy-Heavy.woff');
 }
 
+@font-face {
+  font-family: 'Geomanist-Book';
+  src: url('fonts/Geomanist-Book.woff');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -68,7 +73,26 @@ body {
   font-size: var(--FontMd);
   font-weight: 300;
   background-color: var(--white);
-  animation: fadeInAnimation ease 1s;
+  overflow: overlay;
+  /* animation: fadeInAnimation ease 1s; */
+}
+
+html {
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  border-radius: 10px;
 }
 
 h1,
@@ -94,4 +118,28 @@ h6,
   100% {
     opacity: 1;
   }
+}
+.content {
+  height: auto !important;
+}
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.loader-wrapper h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.absolute {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
 }

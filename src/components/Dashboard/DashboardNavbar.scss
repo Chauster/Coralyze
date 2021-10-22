@@ -5,8 +5,8 @@
   left: 0px;
   width: 250px;
   height: 100vh;
-  color: #3e74ff;
-  background-color: #f3f3f3;
+  // color: #3e74ff;
+  background-color: #2F49CF;
   z-index: 1;
 
   li {
@@ -14,20 +14,23 @@
     margin-top: 10%;
     margin-bottom: 1rem;
     list-style: none;
+    
   }
 
   li a {
     display: flex;
     align-items: center;
-    border-radius: 10%;
+    border-radius: 10px;
     text-decoration: none;
     height: 100%;
     width: 100%;
     transition: all 0.5s ease;
+    padding: 10px;
   }
 
   li a:hover {
     opacity: 0.4;
+    background-color:#041a8b;
   }
 
   // &__logo {
@@ -37,6 +40,25 @@
   //   margin-top: 10%;
   //   margin-bottom: 10%;
   // }
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    h4 {
+      color: var(--white);
+    }
+    h5 {
+      color: var(--primary-3);
+    }
+  }
   &__links {
     height: 100%;
     margin-top: 10px;
@@ -46,13 +68,13 @@
     text-align: center;
     height: 25px;
     min-width: 60px;
-    color: #000;
-    opacity: 0.6;
+    color: #fff;
+    opacity: 0.8;
   }
   &__links__label {
     font-family: 'Gilroy-Regular';
     font-size: 14px;
-    color: #000;
+    color: #fff;
   }
 }
 
@@ -79,14 +101,14 @@
       display: flex;
       flex-direction: row;
       overflow: hidden;
-      background-color: #f3f3f3;
+      background-color: #2F49CF;
     }
     &__links__icon {
       text-align: center;
       height: 25px;
       min-width: 60px;
-      color: #000;
-      opacity: 0.6;
+      color: #fff;
+      opacity: 0.8;
     }
     &__links__label {
       display: none;

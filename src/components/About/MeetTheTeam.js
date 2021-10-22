@@ -30,10 +30,10 @@ const test = () => {
                 Developer
               </div>
               <div class="card__description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo,
-                cumque est necessitatibus debitis neque eveniet sequi quas
-                consequuntur amet? Deleniti molestias assumenda ab aspernatur!
-                Dolorum.
+                Saamir has worked in numerous management and development positions in previous projects, adding 3 years
+                of management and development experience to the team. He has excellent organisational and schedule
+                management skills. Saamir provides highly innovative ideas and calculated solutions,
+                supporting the team with great management strategies.
               </div>
             </div>
 
@@ -44,12 +44,12 @@ const test = () => {
                 </div>
               </div>
               <div class="card__title">Long Le</div>
-              <div class="card__roletitle">Lead Machine Learning Developer</div>
+              <div class="card__roletitle">Lead Machine <br/> Learning Developer</div>
               <div class="card__description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo,
-                cumque est necessitatibus debitis neque eveniet sequi quas
-                consequuntur amet? Deleniti molestias assumenda ab aspernatur!
-                Dolorum.
+                Long has more than 4 years experience working as a lead developer in projects.
+                His expertise is machine learning and he is backbone of our AI systems design.
+                Long has exceptional skills in creating and modifying machine learning algorithms
+                for great effeciency and capabilities.
               </div>
             </div>
 
@@ -60,12 +60,16 @@ const test = () => {
                 </div>
               </div>
               <div class="card__title">Kishen Kumar</div>
-              <div class="card__roletitle">Scrum Master</div>
+              <div class="card__roletitle">
+                Scrum Master
+              <br />
+                Security Analyst
+              </div>
               <div class="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Excepturi rerum doloribus vel, error illum, in earum eveniet
-                facere possimus voluptatibus, ducimus molestiae assumenda
-                temporibus reiciendis?
+                Kishen has 3 years experience working as a scrum master and 2 years experience as a security analyst.
+                He provides a great diversity of skills ranging from team management to system and cyber security analysis.
+                Kishen maintains the secuirty aspects of development and the product, ensuring the privacy and secuirty of
+                customers and the project.
               </div>
             </div>
 
@@ -76,12 +80,16 @@ const test = () => {
                 </div>
               </div>
               <div class="card__title">David Chau</div>
-              <div class="card__roletitle">Lead Front End Developer</div>
+              <div class="card__roletitle">
+                Lead Front End Developer
+                <br />
+                UI/UX Designer
+                </div>
               <div class="card__description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo,
-                cumque est necessitatibus debitis neque eveniet sequi quas
-                consequuntur amet? Deleniti molestias assumenda ab aspernatur!
-                Dolorum.
+                David has devoted himself as lead front end developer for more than 3 years.
+                Over his career he has designed many astonishing websites and his knowledge in front end development
+                is critical in marketing of major products. David's incomparable creativeness in design and passion for front end
+                development, offers high-level support to our front end developers.
               </div>
             </div>
 
@@ -94,10 +102,12 @@ const test = () => {
               <div class="card__title">Bao Lam Nguyen</div>
               <div class="card__roletitle">Machine Learning Developer</div>
               <div class="card__description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo,
-                cumque est necessitatibus debitis neque eveniet sequi quas
-                consequuntur amet? Deleniti molestias assumenda ab aspernatur!
-                Dolorum.
+                Bao Lam is a highly capable developer with an extensive background
+                in machine learning algorithms. Working for more than 3 years as
+                a machine learning developer, he has honed his skills and expertises
+                in algorithm resource usage. Bao's skills provides the team with
+                a competive edge in the market, allowing us to build systems that
+                have reduced resource usage.
               </div>
             </div>
 
@@ -110,9 +120,10 @@ const test = () => {
               <div class="card__title">Cynan Du</div>
               <div class="card__roletitle">Machine Learning Developer</div>
               <div class="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Perferendis, dignissimos! Distinctio, quidem numquam? Sunt
-                perferendis tempora sed dignissimos dolore aspernatur.
+                Cynan is an ambitious machine learning developer working for more than 3 years in our team.
+                His developement background is extensive and he provides expert knowledge
+                in conductive nueral networks. His skills assist in creating well planned
+                nueral networks which are the spine of our artifical intelligence models.
               </div>
             </div>
 
@@ -123,11 +134,12 @@ const test = () => {
                 </div>
               </div>
               <div class="card__title">Armaghan Zahid</div>
-              <div class="card__roletitle"></div>
+              <div class="card__roletitle">Quality Assurance</div>
               <div class="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate, esse animi excepturi laborum magni, ea aspernatur hic
-                amet impedit natus nobis nihil a dolore perspiciatis.
+                Armaghan has more than 3 years experience of extensively testing code to ensure optimal performance and quality.
+                His skills provide the team with great organisational capacities, supporting the
+                collaboration between our teammates. He provides great foresight and professional advice
+                on documentation the team must provide. 
               </div>
             </div>
           </div>

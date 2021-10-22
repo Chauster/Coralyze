@@ -1,7 +1,7 @@
 import React from 'react';
 import './FaqSection.css';
 
-function FaqSection() {
+const FaqSection = () => {
   return (
     <>
       <div className="faqs__container">

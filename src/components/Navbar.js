@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/logo-white.svg';
+import logo from '../images/logo-blue.svg';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Button } from './Button';
 import './Navbar.css';
@@ -72,24 +72,7 @@ function Navbar() {
                   Contact Us
                 </Link>
               </li>
-              <li className="nav__item">
-                <Link
-                  to="/pricing"
-                  className="nav__links"
-                  onClick={closeMobileMenu}
-                >
-                  Pricing
-                </Link>
-              </li>
-              {/* <li className="nav__item">
-                <Link
-                  to="/dashboard"
-                  className="nav__links"
-                  onClick={closeMobileMenu}
-                >
-                  Dashboard
-                </Link>
-              </li> */}
+              
               <li className="nav__btn">
                 {button ? (
                   <div className="btn__conditional">

@@ -8,9 +8,19 @@
   height: auto;
 }
 
+// .card__content {
+//   background-color: var(--white);
+//   border-radius: 25px;
+// }
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @media (min-width: 40em) {
   .card {
-    text-align: left;
+    text-align: center;
   }
 }
 .container__card__intro {
@@ -95,6 +105,10 @@
 
 .card__item {
   padding: 0.9375rem;
+  background-color: var(--white);
+  border-radius: 25px;
+  max-width: 500px;
+  margin: 3em;
 }
 
 @media (min-width: 40em) {
@@ -164,3 +178,4 @@
   line-height: 1.5;
   color: var(--black);
 }
+

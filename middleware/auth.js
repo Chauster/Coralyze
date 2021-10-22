@@ -24,7 +24,7 @@ exports.auth = async(req, res, next) => {
     
         req.user = user;
     
-        next(); // move onto to next lifecycle -> passed in private.js route
+        next(); // move onto to next step in lifecycle -> passed in private.js route
       } catch (err) {
         return next(new ErrorResponse("You are not authorised to access this route", 401));
       }

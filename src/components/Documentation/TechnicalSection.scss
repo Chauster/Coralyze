@@ -1,24 +1,28 @@
 .technical {
   padding: 20px;
-  position: absolute;
-  margin-left: 250px;
+  position: relative;
+  margin-left: 400px;
+  max-width: 1000px;
   background-color: var(--white);
   h1 {
-    font-family: 'Gilroy-Bold';
-    color: var(--primary-2);
+    font-family: 'Geomanist-Book',sans-serif;
+    color: #33444d;
     font-weight: 500;
   }
   &__content {
-    padding-top: 2.5rem;
+    padding-top: 5rem;
     padding-bottom: 2.5rem;
     border-bottom: dotted;
     border-width: thin;
     border-color: var(--black);
     h2 {
-      font-family: 'Gilroy-Medium';
+      font-family: 'Geomanist-Book',sans-serif;
       color: var(--primary-2);
       text-align: left;
       margin: 0px;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 500;
       // font-weight: 600;
     }
     h3 {
@@ -37,6 +41,7 @@
       font-family: 'Gilroy-Light';
       margin-bottom: 2rem;
       color: var(--black);
+      line-height: 24px;
     }
     article {
       color: var(--black);
@@ -87,6 +92,6 @@
   .technical {
     position: relative;
     margin-left: 0px;
-    margin-top: 270px;
+    margin-top: 0px;
   }
 }

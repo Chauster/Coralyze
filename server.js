@@ -22,11 +22,9 @@ connection.once('open', () => {
 });
 
 const usersRouter = require('./routes/users');
-const ticketsRouter = require('./routes/tickets');
 const privateRouter = require('./routes/private');
 
 app.use('/users', usersRouter);
-app.use('/tickets', ticketsRouter);
 app.use('/private', privateRouter);
 app.use(errorHandler);
 

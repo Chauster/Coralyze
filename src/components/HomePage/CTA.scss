@@ -1,6 +1,7 @@
 .CTA {
   color: var(--black);
-
+  margin: 0 auto;
+  max-width: 1280px;
   &__intro {
     padding: 7%;
     h3 {
@@ -44,7 +45,7 @@
     align-items: center;
     margin-bottom: 1rem;
     img {
-      width: 50%;
+      max-width: 60%;
     }
   }
 }

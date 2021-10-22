@@ -21,14 +21,18 @@ const Dashboard = () => {
         setPrivateData(data.data);
       } catch (error) {
         localStorage.removeItem("authToken");
-        setError("You are not authorized please login");
+        setError("You are not authorized to access this page, please login using the link below");
       }
     };
 
     fetchPrivateDate();
   }, []);
   return error ? (
+    <>
     <span className="error-message">{error}</span>
+    <div className="redirect-link"><a href="/login">Click here to Login</a></div>
+    </>
+    
   ) : (
     <>
     <DashboardNavbar></DashboardNavbar>

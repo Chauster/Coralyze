@@ -4,44 +4,158 @@ import './Sidebar.scss';
 const Sidebar = () => {
   return (
     <div>
-      <nav class="navbar">
-        <h3>Get started.</h3>
+      <nav class="sidebar">
+        <h3>Using Coralyze</h3>
         <ul>
           <li>
-            <a class="navbar__link" href="#Introduction">
+            <a class="sidebar__link" href="#Introduction">
               Introduction
             </a>
           </li>
           <li>
-            <a class="navbar__link" href="#Future_Plan">
-              Future Plan
+            <a class="sidebar__link" href="#Introduction">
+              Quick Start Guide
             </a>
           </li>
           <li>
-            <div class="navbar__list__item">
-              <input type="checkbox" id="navbar__list__item__one"></input>
-              <label for="navbar__list__item__one" class="navbar__device">
-                Device
-              </label>
-              <ul class="navbar__list__item__ul">
-                <li class="navbar__list__item__ul__li">
-                  <a href="#Origin">Origin</a>
-                </li>
-                <li class="navbar__list__item__ul__li">
-                  <a href="#Specifications">Specifications</a>
-                </li>
-                <li class="navbar__list__item__ul__li">
-                  <a href="#Features">Features</a>
-                </li>
-                <li class="navbar__list__item__ul__li">
-                  <a href="#Appliance">Appliance</a>
-                </li>
-              </ul>
-            </div>
+            <a class="sidebar__link" href="#Future_Plan">
+              User Manual
+            </a>
           </li>
           <li>
-            <a class="navbar__link" href="#">
-              MORE TO BE ADDED SOON
+            <a class="sidebar__link" href="#">
+              Model Data
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Compatiable devices list
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Registering an account
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Logging In
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Changing your password
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Changing email addresses
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Resetting your password
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Dashboard Guide
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Adding IoT device
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Resetting IoT device data
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Customising UI
+            </a>
+          </li>
+
+          <li>
+            <a class="sidebar__link" href="#">
+              Troubleshooting
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Troubleshooting
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Troubleshooting
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Report a bug
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Where to contact us
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              Troubleshooting
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
             </a>
           </li>
         </ul>

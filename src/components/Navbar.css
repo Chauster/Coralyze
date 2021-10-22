@@ -1,5 +1,5 @@
 .navbar__container {
-  background-color: var(--secondary-3);
+  background-color: var(--white);
   height: 80px;
   display: flex;
   justify-content: center;
@@ -11,9 +11,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-  opacity: 1;
+
 }
 /* .navbar__container::before{
   content:"";
@@ -39,6 +37,7 @@
   display: flex;
   justify-content: space-between;
   height: 80px;
+
 }
 
 .wrapper {
@@ -51,6 +50,8 @@
   margin-left: auto;
   padding-right: 50px;
   padding-left: 50px;
+  max-width: 1260px;
+  margin: 0;
 }
 
 .logo {
@@ -58,15 +59,18 @@
   justify-self: start;
   display: flex;
   align-items: center;
+  opacity: 1 !important;
+  transform: translate(0px, 0px) !important;
 }
+
 
 .nav__menu {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   list-style: none;
   text-align: center;
-  justify-content: end;
+
 }
 
 .nav__item {
@@ -74,17 +78,38 @@
   border-bottom: 2px solid transparent;
 }
 
-.nav__item:hover {
+/* .nav__item:hover {
   border-bottom: 2px solid #3e74ff;
-}
+} */
 
 .nav__links {
-  color: #c2c2c2;
+  position: relative;
+  color: #000;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
+  transition: color .6s cubic-bezier(.32,.94,.6,1);
+  cursor: pointer;
+}
+
+.nav__links:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: .1rem;
+  background-color: #3e74ff;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .6s cubic-bezier(.32, .94, .6, 1)
+}
+
+.nav__links:hover:before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 .fa-bars {
@@ -116,6 +141,7 @@
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    
   }
 
   .nav__menu.active {
@@ -125,6 +151,7 @@
     opacity: 1;
     transition: all 0.6s ease;
     z-index: 1;
+    height: 90vh;
   }
 
   .nav__links {
@@ -136,15 +163,15 @@
     color: var(--black);
   }
 
-  .nav__links:hover {
+  /* .nav__links:hover {
     color: #3e74ff;
     transform: scale(1.2);
     transition: all 0.3s ease;
-  }
+  } */
 
-  .nav__item:hover {
+  /* .nav__item:hover {
     border: none;
-  }
+  } */
 
   .nav__item {
     width: 100%;
@@ -183,13 +210,12 @@
     width: 120px;
     height: 60px;
     border: none;
-    border-radius: 10px;
   }
 }
 
 @media screen and (max-width: 960px) {
   .navbar__container {
-    background-color: var(--secondary-3);
+    background-color: var(--white);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -206,3 +232,5 @@
     height: 80px;
   }
 }
+
+

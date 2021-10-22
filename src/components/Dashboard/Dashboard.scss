@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 .dashboard {
   position: relative;
   top: 0px;
   left: 250px;
-  background: var(--white);
+  background: #F5F6FB;
   height: 100vh;
   width: calc(100% - 250px);
   padding-left: 1%;
@@ -20,14 +19,13 @@
     }
   }
   &__graph {
-    background: #fff;
+    background: #F5F6FB;
     height: 100vh;
 
     &__one__subheading {
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      background: #2a3050;
-      border: 5px solid #3e74ff;
+      background-color: #fff;
+      top: 80px;
+      border: 1px solid #3e74ff;
       border-bottom: hidden;
       padding-left: 1%;
       padding-top: 1%;
@@ -47,7 +45,7 @@
         border-bottom-left-radius: 5px;
         padding: 5px 15px;
         background: transparent;
-        color: #fff;
+        color: #000;
         border: 3px solid #5383ff;
         border-right: hidden;
         transition: all 0.5s ease;
@@ -59,7 +57,7 @@
       &__monthly {
         padding: 5px 15px;
         background: transparent;
-        color: #fff;
+        color: #000;
         border: 3px solid #5383ff;
         transition: all 0.5s ease;
         &:hover {
@@ -72,7 +70,7 @@
         border-bottom-right-radius: 5px;
         padding: 5px 15px;
         background: transparent;
-        color: #fff;
+        color: #000;
         border: 3px solid #5383ff;
         border-left: hidden;
         transition: all 0.5s ease;
@@ -83,23 +81,31 @@
     }
 
     &__one__heading {
-      background: #2a3050;
-      border: 5px solid #3e74ff;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      border: 1px solid #3e74ff;
       border-top: hidden;
       border-bottom: hidden;
-      padding-left: 1%;
+      padding-left: 2%;
+      background-color: #fff;
       p {
-        color: #fff;
-        font-family: Nunito;
-        font-weight: 100;
-        font-size: 2rem;
+        color: #000;
+        font-family: 'Gilroy-Bold';
+        // font-weight: 700;
+        font-size: 18px;
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 40px;
+        height: 40px;
       }
     }
     &__two__subheading {
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      background: #2a3050;
-      border: 5px solid #3e74ff;
+      // border-top-left-radius: 15px;
+      // border-top-right-radius: 15px;
+      background-color: #fff;
+      border: 1px solid #3e74ff;
       border-bottom: hidden;
       padding-left: 3%;
       padding-top: 3%;
@@ -113,24 +119,32 @@
       }
     }
     &__two__heading {
-      background: #2a3050;
-      border: 5px solid #3e74ff;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      background-color: #fff;
+      border: 1px solid #3e74ff;
       border-top: hidden;
       border-bottom: hidden;
       padding-left: 3%;
       width: 100%;
       p {
-        color: #fff;
-        font-family: Nunito;
-        font-weight: 100;
-        font-size: 1.75rem;
+        color: #000;
+        font-family: 'Gilroy-Bold';
+        // font-weight: 700;
+        font-size: 18px;
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 40px;
+        height: 40px;
       }
     }
     &__three__subheading {
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      background: #2a3050;
-      border: 5px solid #3e74ff;
+      // border-top-left-radius: 15px;
+      // border-top-right-radius: 15px;
+      background-color: #fff;
+      border: 1px solid #3e74ff;
       border-bottom: hidden;
       padding-left: 3%;
       padding-top: 3%;
@@ -144,17 +158,25 @@
       }
     }
     &__three__heading {
-      background: #2a3050;
-      border: 5px solid #3e74ff;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      background-color: #fff;
+      border: 1px solid #3e74ff;
       border-top: hidden;
       border-bottom: hidden;
       padding-left: 3%;
       width: 100%;
       p {
-        color: #fff;
-        font-family: Nunito;
-        font-weight: 100;
-        font-size: 1.75rem;
+        color: #000;
+        font-family: 'Gilroy-Bold';
+        // font-weight: 700;
+        font-size: 18px;
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 40px;
+        height: 40px;
       }
     }
     &__four__subheading {
@@ -182,7 +204,7 @@
       padding-left: 3%;
       width: 100%;
       p {
-        color: #fff;
+        color: #000;
         font-family: Nunito;
         font-weight: 100;
         font-size: 1.75rem;
@@ -201,7 +223,7 @@
       border-bottom-right-radius: 0px;
     }
     &__four__grid__right {
-      height: 30%;
+      height: auto;
       background-color: #2a3050;
       border: 5px solid #3e74ff;
       border-left: hidden;
@@ -209,7 +231,7 @@
       border-bottom-right-radius: 15px;
       padding: 1rem;
       p {
-        color: #fff;
+        color: #000;
         font-weight: 500;
         margin-bottom: 1rem;
         margin-right: 1rem;
@@ -218,16 +240,15 @@
   }
 }
 .recharts-responsive-container {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border: 5px solid #3e74ff;
+  border: 1px solid #3e74ff;
   border-top: hidden;
-  background: #2a3050;
   margin-bottom: 2.5rem;
+  background: #fff;
+  box-shadow: 0 0px 0px rgba(0,0,0,0.10), 0 5px 5px rgba(0,0,0,0.10);
 }
 .flex {
   display: flex;
-  height: 100%;
+  height: auto;
 }
 .container {
   width: 100%;
@@ -344,4 +365,53 @@
     width: 10px;
     background-color: #ff8042;
   }
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.redirect-link a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--primary-1);
+}
+
+.button {
+  display: flex;
+  height: 50px;
+  padding: 0;
+  background: #009578;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.button:hover {
+  background: #3E74FF;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  height: 100%;
+}
+
+.button__icon {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
 }

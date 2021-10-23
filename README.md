@@ -329,7 +329,7 @@ These screens currently contain fully functional transformed data. As such, the 
 
 #### [Register Page](../src/components/Register/registerFormPage)
 
-#### [Login Page](../src/components/Login/loginFormSection)
+#### [Login Page](../src/components/Login/)
 
 
 ### Team Members

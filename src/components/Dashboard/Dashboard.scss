@@ -2,7 +2,7 @@
   position: relative;
   top: 0px;
   left: 250px;
-  background: #F5F6FB;
+  // background: #F5F6FB;
   height: 100vh;
   width: calc(100% - 250px);
   padding-left: 1%;
@@ -19,7 +19,7 @@
     }
   }
   &__graph {
-    background: #F5F6FB;
+    background: #f5f6fb;
     height: 100vh;
 
     &__one__subheading {
@@ -244,7 +244,7 @@
   border-top: hidden;
   margin-bottom: 2.5rem;
   background: #fff;
-  box-shadow: 0 0px 0px rgba(0,0,0,0.10), 0 5px 5px rgba(0,0,0,0.10);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 .flex {
   display: flex;
@@ -374,7 +374,7 @@
   margin-bottom: 1rem;
 }
 
-.redirect-link a{
+.redirect-link a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -397,7 +397,7 @@
 }
 
 .button:hover {
-  background: #3E74FF;
+  background: #3e74ff;
   opacity: 1;
   transition: 0.3s ease-in-out;
 }

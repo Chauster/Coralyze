@@ -1,11 +1,12 @@
 .technical {
+  margin-top: 80px;
   padding: 20px;
   position: relative;
   margin-left: 400px;
   max-width: 1000px;
   background-color: var(--white);
   h1 {
-    font-family: 'Geomanist-Book',sans-serif;
+    font-family: 'Geomanist-Book', sans-serif;
     color: #33444d;
     font-weight: 500;
   }
@@ -16,7 +17,7 @@
     border-width: thin;
     border-color: var(--black);
     h2 {
-      font-family: 'Geomanist-Book',sans-serif;
+      font-family: 'Geomanist-Book', sans-serif;
       color: var(--primary-2);
       text-align: left;
       margin: 0px;

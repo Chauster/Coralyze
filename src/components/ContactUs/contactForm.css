@@ -1,4 +1,5 @@
 .form__container {
+  margin-top: 80px;
   position: relative;
   background: var(--white);
   color: var(--black);
@@ -132,4 +133,3 @@
     align-items: center;
   }
 }
-

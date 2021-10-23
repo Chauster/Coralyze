@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 import Herosection from '../components/HomePage/Herosection';
 import Carousel from '../components/HomePage/Carousel';
 import Feature from '../components/HomePage/Featurev2';
@@ -9,6 +10,7 @@ import PricingPackages from '../components/HomePage/PricingPackages';
 const home = () => {
   return (
     <>
+      <Navbar></Navbar>
       <Herosection></Herosection>
       <Feature></Feature>
       <Featuretest></Featuretest>

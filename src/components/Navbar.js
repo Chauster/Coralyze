@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/logo-blue.svg';
+import logo from '../images/logo-white.svg';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Button } from './Button';
 import './Navbar.css';
@@ -9,7 +9,7 @@ import { IconContext } from 'react-icons/lib';
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const [isLoggedIn, setisLoggedIn] = useState((localStorage.getItem('authToken')));
+
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
@@ -23,18 +23,23 @@ function Navbar() {
 
   useEffect(() => {
     showButton();
-
   }, []);
 
   window.addEventListener('resize', showButton);
 
   return (
-    <>
+    <React.Fragment>
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className="navbar__container">
           <div className="navbar__wrapper wrapper">
             <a href="/">
-              <img className="logo" src={logo} alt="Coralyze" width="140px" height="30px" />
+              <img
+                className="logo"
+                src={logo}
+                alt="Coralyze"
+                width="140px"
+                height="30px"
+              />
             </a>
             <div className="menu__icon" onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
@@ -72,12 +77,29 @@ function Navbar() {
                   Contact Us
                 </Link>
               </li>
-              
+              {/* <li className="nav__item">
+                <Link
+                  to="/pricing"
+                  className="nav__links"
+                  onClick={closeMobileMenu}
+                >
+                  Pricing
+                </Link>
+              </li> */}
+              {/* <li className="nav__item">
+                <Link
+                  to="/dashboard"
+                  className="nav__links"
+                  onClick={closeMobileMenu}
+                >
+                  Dashboard
+                </Link>
+              </li> */}
               <li className="nav__btn">
                 {button ? (
-                  <div className="btn__conditional">
-                    {isLoggedIn ? <Link to="/dashboard" className="btn__link"><Button buttonStyle="btn--outline">Dashboard</Button></Link> : <Link to="/login" className="btn__link"><Button buttonStyle="btn--outline">Login</Button></Link>}
-                  </div>
+                  <Link to="/login" className="btn__link">
+                    <Button buttonStyle="btn--outline">Login</Button>
+                  </Link>
                 ) : (
                   <Link
                     to="/login"
@@ -89,14 +111,13 @@ function Navbar() {
                     </Button>
                   </Link>
                 )}
-                
               </li>
             </ul>
           </div>
         </div>
         {/* <div className="navbar__container__blur"></div> */}
       </IconContext.Provider>
-    </>
+    </React.Fragment>
   );
 }
 

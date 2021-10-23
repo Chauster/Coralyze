@@ -1,4 +1,5 @@
 .registersection {
+  margin-top: 80px;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -13,10 +14,11 @@
     &__left {
       display: grid;
       justify-items: center;
-      
+
       @media (min-width: 64em) {
         background-color: #fff;
-        box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10);
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1),
+          0 15px 12px rgba(0, 0, 0, 0.1);
         padding-top: 10%;
         padding-bottom: 10%;
         grid-area: left;
@@ -63,11 +65,11 @@
     &__right {
       height: 56vh;
       margin: 0;
-      box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10);
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.1);
 
       &:after {
         content: '';
-        background-image:url('../../images/paper_plane.svg');
+        background-image: url('../../images/paper_plane.svg');
         background-repeat: no-repeat;
         width: 400px;
         height: 250px;
@@ -225,4 +227,3 @@
     }
   }
 }
-

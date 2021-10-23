@@ -1,9 +1,11 @@
 import React from 'react';
-import Test from '../components/Device/config'
+import Navbar from '../components/Navbar';
+import Test from '../components/Device/config';
 const admin = () => {
   return (
     <div>
-        <Test></Test>
+      <Navbar></Navbar>
+      <Test></Test>
     </div>
   );
 };

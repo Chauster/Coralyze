@@ -108,56 +108,6 @@ const Sidebar = () => {
               Troubleshooting
             </a>
           </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              
-            </a>
-          </li>
         </ul>
       </nav>
     </div>

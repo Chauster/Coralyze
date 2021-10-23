@@ -1,4 +1,5 @@
 .loginsection {
+  margin-top: 80px;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -9,9 +10,11 @@
 
   .form {
     @media (min-width: 64em) {
-      background-color:#3e74ff;
+      border-radius: 15px;
+      background-color: #3e74ff;
     }
     &__left {
+      border-radius: 15px;
       background-color: var(--ltbackground);
       @media (min-width: 64em) {
         padding: 10%;
@@ -47,7 +50,6 @@
       padding: 10px;
       background-color: rgb(255, 255, 255);
       border-color: rgb(76, 154, 255);
-      
     }
     &__input__pw {
       width: 360px;
@@ -60,10 +62,9 @@
     &__forgotpassword {
       margin-bottom: 2rem;
       font-size: 0.875rem;
-      a{
+      a {
         text-decoration: none;
       }
-      
     }
     &__right {
       background-color: #3e74ff;
@@ -184,20 +185,20 @@
 }
 
 .test {
-      -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
   &__wrapper {
     flex-direction: row;
     flex-grow: 1;
@@ -205,12 +206,12 @@
     min-width: 100%;
 
     &__inner {
-    position: relative;
-    background: #f9f9f9;
-    padding: 10.474337872213077rem 5.985335926978902rem 5.985335926978902rem;
-    color: #111;
-    align-items: center;
-    justify-content: flex-start;
+      position: relative;
+      background: #f9f9f9;
+      padding: 10.474337872213077rem 5.985335926978902rem 5.985335926978902rem;
+      color: #111;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     &__header {
@@ -228,21 +229,21 @@
       display: flex;
     }
     &__container {
-    background: rgba(126,126,126,0.1);
-    display: flex;
-    flex-wrap: wrap;
-    color: #525252;
-    position: relative;
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid rgba(126,126,126,0.1);
-    border-radius: 4px;
-    background-clip: padding-box;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    line-height: 100%;
-    padding: 0;
+      background: rgba(126, 126, 126, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      color: #525252;
+      position: relative;
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid rgba(126, 126, 126, 0.1);
+      border-radius: 4px;
+      background-clip: padding-box;
+      width: 100%;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 100%;
+      padding: 0;
 
       &__field {
         display: flex;
@@ -252,7 +253,7 @@
       &__input {
         font-weight: 700;
         letter-spacing: 0;
-        background:transparent;
+        background: transparent;
         line-height: 1.5em;
         width: 100%;
         outline: none;
@@ -285,5 +286,4 @@
       }
     }
   }
-
 }

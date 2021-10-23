@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { Button } from '../../Button';
 import downloadIcon from '../../../images/icons/download.png';
 // import defaultimg from '../../../images/portraits/defaultimg.jpg';
@@ -18,6 +19,14 @@ function DeviceManagement() {
       'Content-Type': 'application/json',
     },
   };
+
+  const success = () => {
+    toast.success("Device added");
+  }
+
+  const failed = () => {
+    toast.error("Device could not be added", {position: toast.POSITION.TOP_CENTER});
+  }
 
   let handleDeviceNameChange = (event) => {
     setDeviceName(event.target.value);
@@ -54,8 +63,10 @@ function DeviceManagement() {
         config
       );
       console.log(data);
+      success();
       clearState();
     } catch (error) {
+      failed();
       setError(error?.response?.data.error);
       setTimeout(() => {
         setError('');
@@ -162,7 +173,7 @@ function DeviceManagement() {
                 required
                 minLength="2"
                 id="ip_add"
-                type="text"
+                type="number"
                 name="ip_add"
                 placeholder="Enter ip address"
                 className="device-mgmt__form-input"

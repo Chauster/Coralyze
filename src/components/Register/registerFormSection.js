@@ -341,11 +341,11 @@ const RegisterFormSection = () => {
                 </div>
                     <div class="form__right__container__feature">
                         <img src="https://www.freeiconspng.com/thumbs/checkmark-png/checkmark-png-transparent-33.png" alt="tick__image"/>
-                            <h4>Personal Dashboard</h4>
+                            <h4>Personalised Dashboard</h4>
                     </div>
                     <div class="form__right__container__feature">
                         <img src="https://www.freeiconspng.com/thumbs/checkmark-png/checkmark-png-transparent-33.png" alt="tick__image"/>
-                            <h4>Free 10GB Storage Space</h4>
+                            <h4>Free 100MB Storage Space</h4>
                     </div>
                     <div class="form__right__container__feature">
                         <img src="https://www.freeiconspng.com/thumbs/checkmark-png/checkmark-png-transparent-33.png" alt="tick__image"/>

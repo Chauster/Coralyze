@@ -38,3 +38,18 @@
     font-weight: normal;
     src: local('Gilroy-Regular ☞'), url('Gilroy-Regular.woff') format('woff');
     }
+
+    @font-face {
+    font-family: 'Geomanist Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Geomanist Black'), url('Geomanist-Black.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Geomanist Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Geomanist Regular'), url('Geomanist-Regular.woff') format('woff');
+    }

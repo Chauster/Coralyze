@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useHistory } from 'react-router-dom';
 import { Button } from '../Button';
 import { IoPersonCircle } from 'react-icons/io5';
@@ -8,18 +10,28 @@ import rightimage from '../../images/login.png';
 
 // import './loginFormSection.css'; REPLACED BY SCSS
 import './loginFormSection.scss';
-
+toast.configure();
 const LoginFormSection = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const history = useHistory();
-  
+
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
       history.push("/dashboard");
     }
   }, [history]);
+
+  // toaster notifications
+  const success = () => {
+    toast.success("Logged in");
+  }
+
+  const failed = () => {
+    toast.error("Invalid Credentials", {position: toast.POSITION.TOP_CENTER});
+  }
+ 
 
   let handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -47,11 +59,13 @@ const LoginFormSection = () => {
     try {
       const { data } = await axios.post('/users/login', { username, password }, config);
       console.log(data);
+      success();
       localStorage.setItem('authToken', data.token);
       localStorage.setItem('username', username); // testing
       history.push("/dashboard");
 
     } catch (error) {
+      failed();
       setError(error?.response?.data.error);
       setTimeout(() => {
         setError('');
@@ -121,8 +135,8 @@ const LoginFormSection = () => {
                 value={username}
                 onChange={handleUsernameChange}
               />
+              {/* { error && <span className="error-message">{error}</span> } */}
             </div>
-            { error && <span className="error-message">{error}</span> }
             <div className="form__inputs">
               <div class="form__subtitle">
                 <div class="form__icon__password">
@@ -145,6 +159,7 @@ const LoginFormSection = () => {
                 value={password}
                 onChange={handlePasswordChange}
               />
+              {/* { error && <span className="error-message">{error}</span> } */}
               {/* <i id="togglePassword" className="fa fa-eye"></i> */}
             </div>
             <div class="form__forgotpassword">
@@ -172,6 +187,9 @@ const LoginFormSection = () => {
           <div class="form__right">
             <img src={rightimage}></img>
           </div>
+          {/* <div>
+        <button onClick={notify}>Notify!</button>
+      </div> */}
         </form>
       </div>
     </>

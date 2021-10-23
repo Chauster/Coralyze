@@ -28,6 +28,7 @@
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
+    "react-toastify": "^8.0.3",
     "recharts": "^2.0.10",
     "simplebar-react": "^2.3.4",
     "styled-components": "^5.3.0",

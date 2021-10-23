@@ -43,7 +43,7 @@ const Featuresection = () => {
             </div>
             <div class="feature__intro">
               <h2>Mobile-Friendly, <br/>access from anywhere</h2>
-              <p>Our team have engineered Coralyze to allow users to access our dashboard from any device, and seamlessly view your IoT devices. We currently support some Android and iOS devices.</p>
+              <p>Our team have engineered Coralyze to allow users to access our dashboard from any device, and seamlessly view your IoT device analytics. We support Android and iOS devices.</p>
               <h4>Compatiable for:</h4>
               <ul class="feature__intro__list">
                 <li class="feature__intro__list__item">Android</li>

@@ -64,9 +64,14 @@
   }
   .feature__intro p {
     text-align: left;
-    line-height: 160%;
+    line-height: 1.5;
     margin-bottom: 1.5rem;
+    max-width: 500px;
   }
+}
+.feature__intro h2 {
+  font-family: 'Geomanist Regular';
+  letter-spacing: 1px;
 }
 .feature__intro__image {
 display: flex;
@@ -210,4 +215,5 @@ align-items: center;
   padding-left: 40px;
   border-bottom: 1px dotted #c7c7c7;
   padding-bottom: 20px;
+  max-width: 500px;
 }

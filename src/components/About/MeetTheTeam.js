@@ -121,7 +121,7 @@ const test = () => {
               <div class="card__roletitle">Machine Learning Developer</div>
               <div class="card__description">
                 Cynan is an ambitious machine learning developer working for more than 3 years in our team.
-                His developement background is extensive and he provides expert knowledge
+                His development background is extensive and he provides expert knowledge
                 in conductive nueral networks. His skills assist in creating well planned
                 nueral networks which are the spine of our artifical intelligence models.
               </div>

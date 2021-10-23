@@ -8,7 +8,13 @@ const { Mongoose } = require('mongoose');
 exports.register = async (req, res, next) => {
     const { username, password, email, chart_data, device_data } = req.body;
     try {
-      
+        const userExists = await User.findOne({ email });
+        if(userExists) {
+          return res.status(400).json({
+            success: false,
+            error: "User already exists, please login or reset your password"
+          })
+        }
         const user = await User.create({
             username, password, email, chart_data, device_data
         });
@@ -34,7 +40,8 @@ exports.login = async (req, res, next) => {
 
         if(!user) {
             res.status(400).json({
-                success: false, error: "Incorrect username/password – Please check and retry"})
+                success: false, 
+                error: "Incorrect username/password – Please check and retry"})
         }
 
         const isMatched = await user.matchPasswords(password);

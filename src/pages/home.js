@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Herosection from '../components/HomePage/Herosection';
 import Carousel from '../components/HomePage/Carousel';
 import Feature from '../components/HomePage/Featurev2';
+import Divider from '../components/HomePage/Divider';
 import Featuretest from '../components/HomePage/Featuresection';
 import CTA from '../components/HomePage/CTA';
 import Footer from '../components/Footer/Footer';
@@ -13,6 +14,7 @@ const home = () => {
       <Navbar></Navbar>
       <Herosection></Herosection>
       <Feature></Feature>
+      <Divider></Divider>
       <Featuretest></Featuretest>
       <PricingPackages></PricingPackages>
       <Carousel></Carousel>

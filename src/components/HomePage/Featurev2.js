@@ -7,6 +7,9 @@ const Featurev2 = () => {
     return (
         <section className="newfeature">
             <div className="newfeature__container">
+            <div className="newfeature__card__intro">
+                        <h1 className="newfeature__card__intro__first">Why</h1><h1 className="newfeature__card__intro__second">&nbsp;Us</h1>
+                    </div>
                 <div className="newfeature__cards__wrapper">
                     <div className="newfeature__card__one">
                         <div className="card__one__image">
@@ -16,7 +19,7 @@ const Featurev2 = () => {
                             <h4>Lightweight</h4>
                         </div>
                         <div className="card__one__desc">
-                            <p>Our engineers designed Coralyze to have a small memory footprint making sure your IoT device is efficient at all times.</p>
+                            <p>Our engineers designed Coralyze to have a small memory footprint making sure your IoT device is efficient and effective at all times.</p>
                         </div>
                     </div>
                     <div className="newfeature__card__two">
@@ -27,7 +30,7 @@ const Featurev2 = () => {
                             <h4>Advanced AI</h4>
                         </div>
                         <div className="card__two__desc">
-                            <p>Coralyze's cutting-edge technology personifies our hopes for AI's future. Coralyze is a platform for advanced AI and analytics that is a unique blend of science and engineering.</p>
+                            <p>Coralyze's cutting-edge technology personifies our hopes for AI's future. Coralyze is a platform for advanced AI and analytics that offers a unique blend of science and engineering.</p>
                         </div>
                     </div>
                     <div className="newfeature__card__three">

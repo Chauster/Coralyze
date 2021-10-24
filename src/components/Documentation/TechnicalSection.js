@@ -530,7 +530,9 @@ const TechnicalSection = () => {
           <article>
             <h3>Feature to come in the near future</h3>
             <p>
-              If you have any enquiries, feel free to send an email to INJECT-DevOps@outlook.com<br/>
+              If you have any enquiries, feel free to send an email to
+              INJECT-DevOps@outlook.com
+              <br />
               Our team will respond back shortly
             </p>
           </article>
@@ -539,7 +541,9 @@ const TechnicalSection = () => {
           <h2>Report a bug</h2>
           <article>
             <p>
-              If you see a potential bug please send a pull request to our GitHub or contact the Coralyze team at INJECT-DevOps@outlook.com <br />
+              If you see a potential bug please send a pull request to our
+              GitHub or contact the Coralyze team at INJECT-DevOps@outlook.com{' '}
+              <br />
               Our team will respond back shortly
             </p>
           </article>
@@ -560,9 +564,14 @@ const TechnicalSection = () => {
         <div class='technical__content' id='Troubleshooting'>
           <h2>Troubleshooting</h2>
           <article>
-            <h3>A step by step troubleshooting feature will come in the near future</h3>
+            <h3>
+              A step by step troubleshooting feature will come in the near
+              future
+            </h3>
             <p>
-              If you have any enquiries, feel free to send an email to INJECT-DevOps@outlook.com<br/>
+              If you have any enquiries, feel free to send an email to
+              INJECT-DevOps@outlook.com
+              <br />
               Our team will respond back shortly
             </p>
           </article>

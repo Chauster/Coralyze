@@ -1,9 +1,9 @@
-
 .error-container {
     display: block;
     justify-content: center;
     align-items: center;
 }
+
 .error-content {
     display: flex;
     justify-content: center;
@@ -26,17 +26,20 @@
     justify-content: center;
     align-items: center;
 }
+
 @media (min-width: 40em) {
     .error-image img {
         width: 70%;
         height: auto;
     }
 }
+
 @media (min-width: 23.4375em) {
     .error-image img {
         width: 70%;
         height: auto;
     }
+
     .error-content h2 {
         padding: 5%;
         text-align: center;

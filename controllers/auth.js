@@ -1,85 +1,88 @@
 const crypto = require('crypto');
 const User = require('../models/user.model');
 const sendEmail = require('../utilities/sendEmail');
-const ErrorResponse = require("../utilities/errorResponse");
+const ErrorResponse = require('../utilities/errorResponse');
 const { Mongoose } = require('mongoose');
 
 // AUTHENTICATION SECTION
 exports.register = async (req, res, next) => {
-    const { username, password, email, chart_data, device_data } = req.body;
-    try {
-        const userExists = await User.findOne({ email });
-        if(userExists) {
-          return res.status(400).json({
-            success: false,
-            error: "User already exists, please login or reset your password"
-          })
-        }
-        const user = await User.create({
-            username, password, email, chart_data, device_data
-        });
-            sendToken(user, 200, res);
-
-    } catch (error) {
-        next(error);
-      }
+  const { username, password, email, chart_data, device_data } = req.body;
+  try {
+    const userExists = await User.findOne({ email });
+    if (userExists) {
+      return res.status(400).json({
+        success: false,
+        error: 'User already exists, please login or reset your password',
+        response: 'failed'
+      });
+    }
+    const user = await User.create({
+      username,
+      password,
+      email,
+      chart_data,
+      device_data,
+    });
+    sendToken(user, 200, res);
+  } catch (error) {
+    next(error);
+  }
 };
 
 exports.login = async (req, res, next) => {
-    const { username, password, token } = req.body;
+  const { username, password, token } = req.body;
 
-    if(!username || !password) {
-        res.status(400).json({
-            success: false,
-            error: "Please enter your username and password"
-        })
+  if (!username || !password) {
+    res.status(400).json({
+      success: false,
+      error: 'Please enter your username and password',
+    });
+  }
+
+  try {
+    const user = await User.findOne({ username }).select('+password');
+
+    if (!user) {
+      res.status(400).json({
+        success: false,
+        error: 'Incorrect username/password – Please check and retry',
+      });
     }
 
-    try {
-        const user = await User.findOne({ username }).select("+password");
+    const isMatched = await user.matchPasswords(password);
 
-        if(!user) {
-            res.status(400).json({
-                success: false, 
-                error: "Incorrect username/password – Please check and retry"})
-        }
-
-        const isMatched = await user.matchPasswords(password);
-
-        if(!isMatched) {
-            res.status(404).json({
-                success: false,
-                error: "Incorrect username/password – Please check and retry"
-            })
-        }
-        sendToken(user, 200, res);
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            error: error.message
-        });
+    if (!isMatched) {
+      res.status(404).json({
+        success: false,
+        error: 'Incorrect username/password – Please check and retry',
+      });
     }
-
+    sendToken(user, 200, res);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
 };
 
 exports.forgotpassword = async (req, res, next) => {
-    const { email } = req.body;
+  const { email } = req.body;
 
-    try {
-        const user = await User.findOne({ email });
+  try {
+    const user = await User.findOne({ email });
 
-        if(!user) {
-            next("Email could not be sent", 404);
-        }
+    if (!user) {
+      next('Email could not be sent', 404);
+    }
 
-        const resetToken = user.getResetPasswordToken();
+    const resetToken = user.getResetPasswordToken();
 
-        await user.save(); 
+    await user.save();
 
-        const resetURL = `http://localhost:3000/resetpassword/${resetToken}`;
+    const resetURL = `http://localhost:3000/resetpassword/${resetToken}`;
 
-        const message = `
+    const message = `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html data-editor-version="2" class="sg-campaigns" xmlns="http://www.w3.org/1999/xhtml">
             <head>
@@ -352,80 +355,79 @@ exports.forgotpassword = async (req, res, next) => {
             </body>
           </html>
 
-        `
-        try {
-            await sendEmail({
-                to: user.email,
-                subject: "Reset Password Request",
-                text: message
-            });
+        `;
+    try {
+      await sendEmail({
+        to: user.email,
+        subject: 'Reset Password Request',
+        text: message,
+      });
 
-            res.status(200).json({
-                success: true,
-                data: "Email sent"
-            });
-        } catch (error) {
-            user.resetPasswordToken = undefined;
-            user.resetPasswordExpire = undefined;
-
-            await user.save();
-
-            return next(error, 500);
-        }
+      res.status(200).json({
+        success: true,
+        data: 'Email sent',
+      });
     } catch (error) {
-        next(error);
+      user.resetPasswordToken = undefined;
+      user.resetPasswordExpire = undefined;
+
+      await user.save();
+
+      return next(error, 500);
     }
+  } catch (error) {
+    next(error);
+  }
 };
 
 exports.resetpassword = async (req, res, next) => {
+  const resetPasswordToken = crypto
+    .createHash('sha256')
+    .update(req.params.resetToken)
+    .digest('hex');
 
-    const resetPasswordToken = crypto
-      .createHash("sha256")
-      .update(req.params.resetToken)
-      .digest("hex");
-  
-    try {
-      const user = await User.findOne({
-        resetPasswordToken,
-        resetPasswordExpire: { $gt: Date.now() },
-      });
-  
-      if (!user) {
-        return next(new ErrorResponse("Invalid Token", 400));
-      }
-  
-      user.password = req.body.password;
-      user.resetPasswordToken = undefined;
-      user.resetPasswordExpire = undefined;
-  
-      await user.save();
-  
-      res.status(201).json({
-        success: true,
-        data: "Password Updated Successfully",
-        token: user.getJWTSignedToken(),
-      });
-    } catch (error) {
-      next(error);
+  try {
+    const user = await User.findOne({
+      resetPasswordToken,
+      resetPasswordExpire: { $gt: Date.now() },
+    });
+
+    if (!user) {
+      return next(new ErrorResponse('Invalid Token', 400));
     }
+
+    user.password = req.body.password;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save();
+
+    res.status(201).json({
+      success: true,
+      data: 'Password Updated Successfully',
+      token: user.getJWTSignedToken(),
+    });
+  } catch (error) {
+    next(error);
+  }
 };
 
 exports.clientID = async (req, res, next) => {
   const { username } = req.body;
 
   try {
-      const user = await User.findOne({ username });
+    const user = await User.findOne({ username });
 
-      if(!user){
-          next("Username not found", 404);
-      }
+    if (!user) {
+      next('Username not found', 404);
+    }
 
-      sendClientID(user, 200, res);
+    sendClientID(user, 200, res);
   } catch (error) {
-      res.status(500).json({
-          success: false,
-          error: error.message
-      });
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
   }
 };
 
@@ -434,201 +436,268 @@ exports.insertDefaultChartData = async (req, res, next) => {
   const { username } = req.body;
 
   try {
-      const user = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "JAN",
-                  "detections": 0
-              },}
-
-          });
-      const graphtwo = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "FEB",
-                  "detections": 0
-              }}
-              
-          });
-      const graphthree = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "MAR",
-                  "detections": 0
-              }}
-              
-          });
-      const graphfour = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "APR",
-                  "detections": 0
-              }}
-              
-          });
-      const graphfive = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "MAY",
-                  "detections": 0
-              }}
-              
-          });
-      const graphsix = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "JUN",
-                  "detections": 0
-              }}
-              
-          });
-      const graphseven = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "JUL",
-                  "detections": 0
-              }}
-              
-          });
-      const grapheight = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "AUG",
-                  "detections": 0
-              }}
-              
-          });
-      const graphnine = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "SEP",
-                  "detections": 0
-              }}
-              
-          });
-      const graphten = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "OCT",
-                  "detections": 0
-              }}
-              
-          });
-      const grapheleven = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "NOV",
-                  "detections": 0
-              }}
-              
-          });
-      const graphtwelve = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "male": 0,
-                  "female": 0,
-                  "month": "DEC",
-                  "detections": 0
-              }}
-              
-          });
-      const graphthirteen = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "agegroup": "0-10yr",
-                  "detections": 0
-              }}
-          });
-      const graphfourteen = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "agegroup": "11-20yr",
-                  "detections": 0
-              }}
-          });
-      const graphfifteen = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "agegroup": "21-40yr",
-                  "detections": 0
-              }}
-          });
-      const graphsixteen = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "agegroup": "41-60yr",
-                  "detections": 0
-              }}
-          });
-      const graphseventeen = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "agegroup": "61-70yr",
-                  "detections": 0
-              }}
-          });
-      const grapheightteen = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "agegroup": "70+yr",
-                  "detections": 0
-              }}
-          });
-      const graphnineteen = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "gender": "Male",
-                  "detections": 0
-              }}
-          });
-      const graphtwenty = await User.findOneAndUpdate({username}, 
-          {$push: 
-              {chart_data:{
-                  "gender": "Female",
-                  "detections": 0
-              }}
-          });
-      sendClientID(user, 200, res);
+    const user = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'JAN',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphtwo = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'FEB',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphthree = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'MAR',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphfour = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'APR',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphfive = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'MAY',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphsix = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'JUN',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphseven = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'JUL',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const grapheight = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'AUG',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphnine = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'SEP',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphten = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'OCT',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const grapheleven = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'NOV',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphtwelve = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            male: 0,
+            female: 0,
+            month: 'DEC',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphthirteen = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            agegroup: '0-10yr',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphfourteen = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            agegroup: '11-20yr',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphfifteen = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            agegroup: '21-40yr',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphsixteen = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            agegroup: '41-60yr',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphseventeen = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            agegroup: '61-70yr',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const grapheightteen = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            agegroup: '70+yr',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphnineteen = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            gender: 'Male',
+            detections: 0,
+          },
+        },
+      }
+    );
+    const graphtwenty = await User.findOneAndUpdate(
+      { username },
+      {
+        $push: {
+          chart_data: {
+            gender: 'Female',
+            detections: 0,
+          },
+        },
+      }
+    );
+    sendClientID(user, 200, res);
   } catch (error) {
-      res.status(500).json({
-          success: false,
-          error: error.message
-      });
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
   }
-}
+};
 exports.getchartdata = async (req, res, next) => {
   const { _id } = req.body;
   try {
-      const chart_records = await User.findOne({ _id }); // currently checks the id of the user, fetches all chart_data related to that user
-      if(!chart_records) {
-          next("User not found", 400);
-      } 
-      sendChartData(chart_records, 200, res);
-  
+    const chart_records = await User.findOne({ _id }); // currently checks the id of the user, fetches all chart_data related to that user
+    if (!chart_records) {
+      next('User not found', 400);
+    }
+    sendChartData(chart_records, 200, res);
   } catch (error) {
-      next(error);
+    next(error);
   }
 };
 
@@ -636,63 +705,71 @@ exports.getchartdata = async (req, res, next) => {
 exports.addDevice = async (req, res, next) => {
   const { _id, device_name, device_ip } = req.body;
 
-  try { 
-    const devicedata = await User.findOneAndUpdate({ _id }, 
-      {$push: 
-        {device_data:{
-            "name": device_name,
-            "ip_add": device_ip
-          }}
-      });
-    if(!devicedata) {
+  try {
+    const devicedata = await User.findOneAndUpdate(
+      { _id },
+      {
+        $push: {
+          device_data: {
+            name: device_name,
+            ip_add: device_ip,
+          },
+        },
+      }
+    );
+    if (!devicedata) {
       res.status(400).json({
-          success: false, error: "Could not find user"})
+        success: false,
+        error: 'Could not find user',
+      });
     }
     sendResponse(devicedata, 200, res);
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
-  });
+      error: error.message,
+    });
   }
-}
+};
 
 exports.getdevicedata = async (req, res, next) => {
   const { _id } = req.body;
   try {
-      const device_records = await User.findOne({ _id }); // currently checks the id of the user, fetches all device_data related to that user
-      if(!device_records) {
-          next("User not found", 400);
-      } 
-      sendDeviceData(device_records, 200, res);
-  
+    const device_records = await User.findOne({ _id }); // currently checks the id of the user, fetches all device_data related to that user
+    if (!device_records) {
+      next('User not found', 400);
+    }
+    sendDeviceData(device_records, 200, res);
   } catch (error) {
-      next(error);
+    next(error);
   }
-
-}
+};
 
 const sendToken = (user, statusCode, res) => {
-    const token = user.getJWTSignedToken(); // Encodes token based on the passed in data
-    res.status(statusCode).json({ success: true, token}); // Checks whether the token has been encoded successfully
-}
+  const token = user.getJWTSignedToken(); // Encodes token based on the passed in data
+  res.status(statusCode).json({ success: true, token }); // Checks whether the token has been encoded successfully
+};
 
-const sendClientID = (user, statusCode, res) => { // To send client ID to the frontend
-    const clientID = user.getUserId();
-    res.status(statusCode).json({ success: true, clientID});
-}
+const sendClientID = (user, statusCode, res) => {
+  // To send client ID to the frontend
+  const clientID = user.getUserId();
+  res.status(statusCode).json({ success: true, clientID });
+};
 
-const sendChartData = (user, statusCode, res) => { // To send chart data to the frontend
-    const chartData = user.getDashboardData();
-    res.status(statusCode).json({ success: true, chartData});
-}
+const sendChartData = (user, statusCode, res) => {
+  // To send chart data to the frontend
+  const chartData = user.getDashboardData();
+  res.status(statusCode).json({ success: true, chartData });
+};
 
-const sendDeviceData = (user, statusCode, res) => { // To send device data to the frontend
+const sendDeviceData = (user, statusCode, res) => {
+  // To send device data to the frontend
   const deviceData = user.getDeviceData();
-  res.status(statusCode).json({success: true, deviceData});
-}
+  res.status(statusCode).json({ success: true, deviceData });
+};
 
-const sendResponse = (user, statusCode, res) => { // General success response
+const sendResponse = (user, statusCode, res) => {
+  // General success response
   const message = 'Response was successful';
-  res.status(statusCode).json({success: true, message});
-}
+  res.status(statusCode).json({ success: true, message });
+};

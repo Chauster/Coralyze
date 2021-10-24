@@ -1,127 +1,146 @@
-.newfeature{
-    height: auto;
-    // padding-left: 10%;
-    // padding-right: 10%;
-    margin: 0 auto;
-    max-width: 1280px;
-    margin-top: 1rem;
-    margin-bottom: 10rem;
-    &__container {
-    }
-    &__card__intro {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 2rem;
+.newfeature {
+  height: auto;
+  // padding-left: 10%;
+  // padding-right: 10%;
+  margin: 0 auto;
+  max-width: 1280px;
+  margin-top: 1rem;
+  margin-bottom: 10rem;
+  &__card__intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
 
-        h1 {
-            font-family: 'Geomanist Regular';
-            font-weight: bold;
-        }
-        &__first {
-            background-image: linear-gradient(120deg, #16e9cd, #3E74FF);
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        &__second {
-            background-image: linear-gradient(120deg, #16e9cd, #3E74FF);
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    h1 {
+      font-family: 'Geomanist Regular';
+      font-weight: bold;
     }
-    &__cards__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        // gap: 10em;
-        max-width: 1,143px;
-        justify-content: center;
-        align-items: center;
+    &__first {
+      background-image: linear-gradient(120deg, #16e9cd, #3e74ff);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    &__second {
+      background-image: linear-gradient(120deg, #16e9cd, #3e74ff);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+  &__cards__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    // gap: 10em;
+    max-width: 1, 143px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 1908px) {
+    .newfeature__cards__wrapper {
+      gap: 2em;
+    }
+  }
+  @media (min-width: 1909px) {
+    .newfeature__cards__wrapper {
+      gap: 5em;
+    }
+  }
+
+  &__card__one {
+    display: flex;
+    flex: 1 1 33%;
+    min-width: 265px;
+    min-height: 290px;
+    max-width: 365px;
+    flex-direction: column;
+    padding-left: 33px;
+    padding-top: 29px;
+    padding-right: 33px;
+    padding-bottom: 32px;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08),
+      10px 15px 12px rgba(0, 0, 0, 0.08);
+
+    .card__one__title {
+      padding-bottom: 1rem;
     }
 
-    @media (max-width: 1908px) {
-        .newfeature__cards__wrapper {
-            gap: 2em;
-        }
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  &__card__two {
+    display: flex;
+    flex: 1 1 33%;
+    min-width: 265px;
+    min-height: 290px;
+    max-width: 365px;
+    flex-direction: column;
+    padding-left: 33px;
+    padding-top: 29px;
+    padding-right: 33px;
+    padding-bottom: 32px;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08),
+      10px 15px 12px rgba(0, 0, 0, 0.08);
+
+    .card__two__title {
+      padding-bottom: 1rem;
+    }
+
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  &__card__three {
+    display: flex;
+    flex: 1 1 33%;
+    min-width: 265px;
+    min-height: 290px;
+    max-width: 365px;
+    flex-direction: column;
+    padding-left: 33px;
+    padding-top: 29px;
+    padding-right: 33px;
+    padding-bottom: 32px;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08),
+      10px 15px 12px rgba(0, 0, 0, 0.08);
+
+    .card__three__title {
+      padding-bottom: 1rem;
+    }
+
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  @media (max-width: 48em) {
+    .newfeature {
+      &__container {
+        padding: 10%;
       }
-      @media (min-width: 1909px) {
-        .newfeature__cards__wrapper {
-            gap: 5em;
-        }
+      &__card__one {
+        min-height: 359px;
       }
-
-    &__card__one {
-        display: flex;
-        flex: 1 1 33%;
-        min-width: 265px;
-        min-height: 290px;
-        max-width: 365px;
-        flex-direction: column;
-        padding-left: 33px;
-        padding-top: 29px;
-        padding-right: 33px;
-        padding-bottom: 32px;
-        border-radius: 5px;
-        align-items: center;
-        text-align: center;
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.08), 10px 15px 12px rgba(0,0,0,0.08);
-
-        .card__one__title {
-            padding-bottom: 1rem;
-        }
-
-        img {
-            width: 70px;
-            height: 70px;
-        }
     }
-    &__card__two {
-        display: flex;
-        flex: 1 1 33%;
-        min-width: 265px;
+  }
+  @media (max-width: 44.1875em) {
+    // Specific Styling
+    .newfeature {
+      &__card__one {
         min-height: 290px;
-        max-width: 365px;
-        flex-direction: column;
-        padding-left: 33px;
-        padding-top: 29px;
-        padding-right: 33px;
-        padding-bottom: 32px;
-        border-radius: 5px;
-        align-items: center;
-        text-align: center;
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.08), 10px 15px 12px rgba(0,0,0,0.08);
-
-        .card__two__title {
-            padding-bottom: 1rem;
-        }
-
-        img {
-            width: 70px;
-            height: 70px;
-        }
+      }
     }
-    &__card__three {
-        display: flex;
-        flex: 1 1 33%;
-        min-width: 265px;
-        min-height: 290px;
-        max-width: 365px;
-        flex-direction: column;
-        padding-left: 33px;
-        padding-top: 29px;
-        padding-right: 33px;
-        padding-bottom: 32px;
-        border-radius: 5px;
-        align-items: center;
-        text-align: center;
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.08), 10px 15px 12px rgba(0,0,0,0.08);
-
-        .card__three__title {
-            padding-bottom: 1rem;
-        }
-        
-        img {
-            width: 70px;
-            height: 70px;
-        }
-    }
+  }
 }

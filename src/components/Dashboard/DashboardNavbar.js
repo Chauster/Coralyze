@@ -24,47 +24,47 @@ const DashboardNavbar = () => {
   };
   return (
     <div>
-      <nav class="dashnavbar">
-        <div class="dashnavbar__logo">
-          <Link to="/dashboard">
+      <nav class='dashnavbar'>
+        <div class='dashnavbar__logo'>
+          <Link to='/dashboard'>
             <img
               src={logo}
-              alt="Coralyze Logo"
-              width="150px"
-              height="50px"
+              alt='Coralyze Logo'
+              width='150px'
+              height='50px'
             ></img>
           </Link>
         </div>
-        <div class="dashnavbar__profile">
+        <div class='dashnavbar__profile'>
           <h4>Welcome</h4>
-          <h5 className="">{username}</h5>
+          <h5 className=''>{username}</h5>
         </div>
-        <ul className="dashnavbar__parent">
-          <li className="dashnavbar__child">
-            <span className="dashnavbar__child__heading">Status</span>
-            <ul class="dashnavbar__links">
+        <ul className='dashnavbar__parent'>
+          <li className='dashnavbar__child'>
+            <span className='dashnavbar__child__heading'>Status</span>
+            <ul class='dashnavbar__links'>
               <li>
-                <Link to="/dashboard">
-                  <RiDashboardLine class="dashnavbar__links__icon" />
-                  <span class="dashnavbar__links__label">Dashboard</span>
+                <Link to='/dashboard'>
+                  <RiDashboardLine class='dashnavbar__links__icon' />
+                  <span class='dashnavbar__links__label'>Dashboard</span>
                 </Link>
               </li>
             </ul>
           </li>
-          <li className="dashnavbar__child">
-            <span className="dashnavbar__child__heading">Settings</span>
-            <ul class="dashnavbar__links">
+          <li className='dashnavbar__child'>
+            <span className='dashnavbar__child__heading'>Settings</span>
+            <ul class='dashnavbar__links'>
               <li>
-                <Link to="/accountsettings">
-                  <IoSettingsOutline class="dashnavbar__links__icon" />
-                  <span class="dashnavbar__links__label">Account</span>
+                <Link to='/accountsettings'>
+                  <IoSettingsOutline class='dashnavbar__links__icon' />
+                  <span class='dashnavbar__links__label'>Account</span>
                 </Link>
               </li>
               <li>
-                <Link to="/devicemanagement">
-                  <BiDevices class="dashnavbar__links__icon" />
-                  <span class="dashnavbar__links__label">
-                    <span className="dashnavbar__child__heading">
+                <Link to='/devicemanagement'>
+                  <BiDevices class='dashnavbar__links__icon' />
+                  <span class='dashnavbar__links__label'>
+                    <span className='dashnavbar__child__heading'>
                       Device Management
                     </span>
                   </span>
@@ -72,13 +72,13 @@ const DashboardNavbar = () => {
               </li>
             </ul>
           </li>
-          <li className="dashnavbar__child">
-            <span className="dashnavbar__child__heading">Exit</span>
-            <ul class="dashnavbar__links">
+          <li className='dashnavbar__child'>
+            <span className='dashnavbar__child__heading'>Exit</span>
+            <ul class='dashnavbar__links'>
               <li>
-                <Link to="/">
-                  <BiLogOut class="dashnavbar__links__icon" />
-                  <span class="dashnavbar__links__label" onClick={Logout}>
+                <Link to='/'>
+                  <BiLogOut class='dashnavbar__links__icon' />
+                  <span class='dashnavbar__links__label' onClick={Logout}>
                     Logout
                   </span>
                 </Link>

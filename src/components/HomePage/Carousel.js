@@ -13,8 +13,8 @@ import aws from '../../images/carousel/aws.svg';
 
 const Carousel = () => {
   return (
-    <section class="carousel">
-      <div class="title">
+    <section class='carousel'>
+      <div class='title'>
         <h2>Rapid delivery. Effective detection.</h2>
         <h1>Powered by technology.</h1>
         <p>
@@ -22,58 +22,58 @@ const Carousel = () => {
           the best it can be.
         </p>
       </div>
-      <div class="slider">
-        <div class="slide-track">
+      <div class='slider'>
+        <div class='slide-track'>
           {/* first */}
-          <div class="slide">
-            <img src={tf} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={tf} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={coral} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={coral} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={mongo} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={mongo} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={express} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={express} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={react} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={react} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={node} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={node} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={nginx} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={nginx} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={aws} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={aws} height='100' width='250' alt='' />
           </div>
 
           {/* second */}
-          <div class="slide">
-            <img src={tf} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={tf} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={coral} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={coral} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={mongo} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={mongo} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={express} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={express} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={react} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={react} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={node} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={node} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={nginx} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={nginx} height='100' width='250' alt='' />
           </div>
-          <div class="slide">
-            <img src={aws} height="100" width="250" alt="" />
+          <div class='slide'>
+            <img src={aws} height='100' width='250' alt='' />
           </div>
         </div>
       </div>

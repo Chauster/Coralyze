@@ -20,54 +20,45 @@ import PrivateRoute from './routing/privateroute';
 //register
 import ForgotPassword from './pages/forgotpassword';
 import ResetPassword from './components/Authentication/resetpassword';
-import ResetPasswordSuccess from './pages/resetpasswordSuccess';
-
-//admin
-import Admin from './pages/admin';
 
 function App() {
   return (
     <>
       <Router>
-        <div classname="App">
+        <div classname='App'>
           {/* <Navbar /> */}
-          <div className="content" id="main-container" data-scroll-container>
+          <div className='content' id='main-container' data-scroll-container>
             <Switch>
               <PrivateRoute
                 exact
-                path="/dashboard"
+                path='/dashboard'
                 component={Dashboard}
               ></PrivateRoute>
-              <Route exact path="/" component={Home}></Route>
-              <Route path="/about" component={About}></Route>
-              <Route path="/documentation" component={Documentation}></Route>
-              <Route path="/contact" component={Contact}></Route>
-              <Route path="/login" component={Login}></Route>
-              <Route path="/register" component={Register}></Route>
-              <Route path="/forgotpassword" component={ForgotPassword}></Route>
+              <Route exact path='/' component={Home}></Route>
+              <Route path='/about' component={About}></Route>
+              <Route path='/documentation' component={Documentation}></Route>
+              <Route path='/contact' component={Contact}></Route>
+              <Route path='/login' component={Login}></Route>
+              <Route path='/register' component={Register}></Route>
+              <Route path='/forgotpassword' component={ForgotPassword}></Route>
               <Route
                 exact
-                path="/resetpassword/:resetToken"
+                path='/resetpassword/:resetToken'
                 component={ResetPassword}
               ></Route>
+              <Route path='/faqs' component={Faqs}></Route>
+              <Route path='/privacypolicy' component={PrivacyPolicy}></Route>
+              <Route path='/dashboard' component={Dashboard}></Route>
               <Route
-                path="/resetpasswordsuccess"
-                component={ResetPasswordSuccess}
-              ></Route>
-              <Route path="/faqs" component={Faqs}></Route>
-              <Route path="/privacypolicy" component={PrivacyPolicy}></Route>
-              <Route path="/dashboard" component={Dashboard}></Route>
-              <Route
-                path="/accountsettings"
+                path='/accountsettings'
                 component={AccountSettings}
               ></Route>
               <Route
-                path="/devicemanagement"
+                path='/devicemanagement'
                 component={DeviceManagement}
               ></Route>
-              <Route path="/notifications" component={Notifications}></Route>
-              <Route path="/admin" component={Admin}></Route>
-              <Route path="*" component={PageNotFound}></Route>
+              <Route path='/notifications' component={Notifications}></Route>
+              <Route path='*' component={PageNotFound}></Route>
             </Switch>
           </div>
         </div>

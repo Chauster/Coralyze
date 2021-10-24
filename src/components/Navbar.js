@@ -30,48 +30,48 @@ function Navbar() {
   return (
     <React.Fragment>
       <IconContext.Provider value={{ color: '#fff' }}>
-        <div className="navbar__container">
-          <div className="navbar__wrapper wrapper">
-            <a href="/">
+        <div className='navbar__container'>
+          <div className='navbar__wrapper wrapper'>
+            <a href='/'>
               <img
-                className="logo"
+                className='logo'
                 src={logo}
-                alt="Coralyze"
-                width="140px"
-                height="30px"
+                alt='Coralyze'
+                width='140px'
+                height='30px'
               />
             </a>
-            <div className="menu__icon" onClick={handleClick}>
+            <div className='menu__icon' onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </div>
             <ul className={click ? 'nav__menu active' : 'nav__menu'}>
-              <li className="nav__item">
-                <Link to="/" className="nav__links" onClick={closeMobileMenu}>
+              <li className='nav__item'>
+                <Link to='/' className='nav__links' onClick={closeMobileMenu}>
                   Home
                 </Link>
               </li>
-              <li className="nav__item">
+              <li className='nav__item'>
                 <Link
-                  to="/about"
-                  className="nav__links"
+                  to='/about'
+                  className='nav__links'
                   onClick={closeMobileMenu}
                 >
                   About
                 </Link>
               </li>
-              <li className="nav__item">
+              <li className='nav__item'>
                 <Link
-                  to="/documentation"
-                  className="nav__links"
+                  to='/documentation'
+                  className='nav__links'
                   onClick={closeMobileMenu}
                 >
                   Documentation
                 </Link>
               </li>
-              <li className="nav__item">
+              <li className='nav__item'>
                 <Link
-                  to="/contact"
-                  className="nav__links"
+                  to='/contact'
+                  className='nav__links'
                   onClick={closeMobileMenu}
                 >
                   Contact Us
@@ -95,18 +95,18 @@ function Navbar() {
                   Dashboard
                 </Link>
               </li> */}
-              <li className="nav__btn">
+              <li className='nav__btn'>
                 {button ? (
-                  <Link to="/login" className="btn__link">
-                    <Button buttonStyle="btn--outline">Login</Button>
+                  <Link to='/login' className='btn__link'>
+                    <Button buttonStyle='btn--outline'>Login</Button>
                   </Link>
                 ) : (
                   <Link
-                    to="/login"
-                    className="btn__link"
+                    to='/login'
+                    className='btn__link'
                     onClick={closeMobileMenu}
                   >
-                    <Button buttonStyle="btn--outline" buttonSize="btn--mobile">
+                    <Button buttonStyle='btn--outline' buttonSize='btn--mobile'>
                       Login
                     </Button>
                   </Link>

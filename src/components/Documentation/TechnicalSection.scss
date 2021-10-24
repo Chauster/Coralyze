@@ -2,11 +2,11 @@
   margin-top: 80px;
   padding: 20px;
   position: relative;
-  margin-left: 400px;
+  margin-left: 550px;
   max-width: 1000px;
   background-color: var(--white);
   h1 {
-    font-family: 'Geomanist-Book', sans-serif;
+    font-family: "Geomanist-Book", sans-serif;
     color: #33444d;
     font-weight: 500;
   }
@@ -17,29 +17,31 @@
     border-width: thin;
     border-color: var(--black);
     h2 {
-      font-family: 'Geomanist-Book', sans-serif;
+      font-family: "Geomanist-Book", sans-serif;
       color: var(--primary-2);
       text-align: left;
       margin: 0px;
       font-size: 24px;
       line-height: 28px;
       font-weight: 500;
+      margin-bottom: 1.25rem;
       // font-weight: 600;
     }
     h3 {
-      font-family: 'Gilroy-Medium';
+      font-family: "Gilroy-Medium";
       color: var(--primary-2);
       text-align: left;
       margin: 0px;
+      margin-bottom: 1rem;
       // font-weight: 400;
     }
     h4 {
-      font-family: 'Gilroy-Medium';
+      font-family: "Gilroy-Medium";
       margin-bottom: 1rem;
     }
 
     p {
-      font-family: 'Gilroy-Light';
+      font-family: "Gilroy-Light";
       margin-bottom: 2rem;
       color: var(--black);
       line-height: 24px;
@@ -59,14 +61,31 @@
       padding: 20px;
     }
 
+    // Full scale images
     &__horizontal {
-      width: 300px;
-      height: 250px;
+      width: 100%;
+      height: auto;
     }
 
     &__vertical {
-      width: 250px;
-      height: 300px;
+      width: 100%;
+      height: auto;
+    }
+    // Full scale images
+
+    // Specific scale images
+    &__small {
+      width: 40%;
+      height: auto;
+    }
+
+    &__medium {
+      width: 60%;
+      height: auto;
+    }
+    &__large {
+      width: 80%;
+      height: auto;
     }
   }
 
@@ -76,7 +95,7 @@
     border-collapse: collapse;
 
     th {
-      font-family: 'Gilroy-Medium';
+      font-family: "Gilroy-Medium";
       // text-transform: uppercase;
       // font-weight: 800;
       font-size: var(--FontSm);
@@ -84,8 +103,39 @@
     }
 
     td {
-      font-family: 'Gilroy-Light';
+      font-family: "Gilroy-Light";
       padding: 1rem;
+    }
+  }
+
+  &__ordered {
+    list-style: none;
+    line-height: 1.5;
+    a {
+      text-decoration: none;
+    }
+    li {
+      color: var(--primary-1);
+      margin-bottom: 2em;
+    }
+  }
+  &__normal {
+    list-style: none;
+    line-height: 1.5;
+    a {
+      text-decoration: none;
+    }
+    li {
+      margin-bottom: 1em;
+    }
+  }
+  &__indent {
+    line-height: 1.5;
+    a {
+      text-decoration: none;
+    }
+    li {
+      margin-left: 3em;
     }
   }
 }
@@ -94,5 +144,10 @@
     position: relative;
     margin-left: 0px;
     margin-top: 0px;
+  }
+}
+@media (max-width: 120em) {
+  .technical__content {
+    margin-right: 10%;
   }
 }

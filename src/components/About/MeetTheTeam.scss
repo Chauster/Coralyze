@@ -4,7 +4,6 @@
   padding-top: 5%;
   padding-bottom: 5%;
   height: auto;
-
 }
 
 // .card__content {
@@ -105,7 +104,7 @@
 .card__item {
   padding: 0.9375rem;
   background-color: var(--white);
-  border-radius: 25px;
+  border-radius: 15px;
   max-width: 500px;
   margin: 3em;
 }
@@ -124,8 +123,6 @@
 
 .card__image {
   margin-bottom: 1.875rem;
-
-
 }
 .card__image img {
   height: 150px;
@@ -172,9 +169,8 @@
 }
 
 .card__description {
-  font-family: 'Gilroy-Light';
+  font-family: 'Geomanist Regular';
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--black);
 }
-

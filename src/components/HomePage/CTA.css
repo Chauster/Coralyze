@@ -7,11 +7,11 @@
 }
 
 .CTA__intro h3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  display: -webkit-box; /* Browser support */
+  display: -ms-flexbox; /* Browser support */
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
+  -webkit-box-pack: center; /* Browser support */
+      -ms-flex-pack: center; /* Browser support */
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -19,14 +19,14 @@
 }
 
 .CTA__message p {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  display: -webkit-box; /* Browser support */
+  display: -ms-flexbox; /* Browser support */
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
+  -webkit-box-pack: center; /* Browser support */
+      -ms-flex-pack: center; /* Browser support */
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
+  -webkit-box-align: center; /* Browser support */
+      -ms-flex-align: center; /* Browser support */
           align-items: center;
   text-align: center;
 }
@@ -35,11 +35,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
+  -webkit-box-pack: center; /* Browser support */
+      -ms-flex-pack: center; /* Browser support */
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
+  -webkit-box-align: center; /* Browser support */
+      -ms-flex-align: center; /* Browser support */
           align-items: center;
 }
 
@@ -56,8 +56,8 @@
 }
 
 .CTA__image {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  display: -webkit-box; /* Browser support */
+  display: -ms-flexbox; /* Browser support */
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -73,7 +73,7 @@
 
 @media (min-width: 64em) {
   .CTA__description {
-    display: -ms-grid;
+    display: -ms-grid; /* Browser support */
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;

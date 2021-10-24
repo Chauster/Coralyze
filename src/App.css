@@ -115,13 +115,16 @@ h6,
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .content {
   height: auto !important;
 }
+
 .loader-wrapper {
   display: flex;
   justify-content: center;

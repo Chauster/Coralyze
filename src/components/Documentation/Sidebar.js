@@ -13,99 +13,88 @@ const Sidebar = () => {
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#Introduction">
+            <a class="sidebar__link" href="#QSG">
               Quick Start Guide
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#Future_Plan">
-              User Manual
+            <a class="sidebar__link" href="#DevicePrep">
+              Device Preparation
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
-              Model Data
+            <a class="sidebar__link" href="#CoralyzePackages">
+              Coralyze packages
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#CD">
               Compatiable devices list
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#Register">
               Registering an account
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#Login">
               Logging In
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#ChangePassword">
               Changing your password
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
-              Changing email addresses
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#ResetPassword">
               Resetting your password
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#DashboardGuide">
               Dashboard Guide
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#AddDevice">
               Adding IoT device
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#ResetChartData">
               Resetting IoT device data
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#CustomiseUI">
               Customising UI
             </a>
           </li>
-
           <li>
-            <a class="sidebar__link" href="#">
-              Troubleshooting
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              Troubleshooting
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
-              Troubleshooting
-            </a>
-          </li>
-          <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#Report">
               Report a bug
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#ContactUs">
               Where to contact us
             </a>
           </li>
           <li>
-            <a class="sidebar__link" href="#">
+            <a class="sidebar__link" href="#Troubleshooting">
               Troubleshooting
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#">
+              
+            </a>
+          </li>
+          <li>
+            <a class="sidebar__link" href="#Device">
+              Tinker Edge T Example
             </a>
           </li>
         </ul>

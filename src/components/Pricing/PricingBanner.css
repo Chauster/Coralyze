@@ -39,6 +39,7 @@
 .banner__image img {
   width: 50%;
 }
+
 @media (min-width: 25.875em) {
   .banner {
     display: grid;
@@ -63,15 +64,18 @@
     align-items: center;
   }
 }
+
 @media (min-width: 40em) {
   .banner {
     display: grid;
     grid-template-columns: 1fr;
   }
+
   .banner img {
     width: 60%;
     height: 60%;
   }
+
   .banner h1 {
     display: flex;
     justify-content: center;
@@ -90,6 +94,7 @@
     align-items: center;
   }
 }
+
 @media (min-width: 64em) {
   .banner {
     display: -ms-grid;
@@ -97,6 +102,7 @@
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
+
   .banner__button {
     display: flex;
     justify-content: left;

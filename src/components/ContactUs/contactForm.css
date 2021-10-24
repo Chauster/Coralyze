@@ -119,6 +119,7 @@
   height: 50px;
   margin-top: 10px;
 }
+
 @media (min-width: 25.875em) {
   .form__btn {
     display: flex;
@@ -126,6 +127,7 @@
     align-items: center;
   }
 }
+
 @media (min-width: 40em) {
   .form__btn {
     display: flex;

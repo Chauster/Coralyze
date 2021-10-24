@@ -1,6 +1,6 @@
 .sidebar {
   // Coralyze-Frontend Code
-  font-family: 'Gilroy-Regular';
+  font-family: "Gilroy-Regular";
   position: fixed;
   border-radius: 12px;
   padding: 10px;
@@ -11,7 +11,7 @@
   opacity: 0.95;
   margin-left: 20px;
   top: 80px;
-  left: 7%;
+  left: 15.1%;
   width: 200px;
   height: auto;
   display: flex;
@@ -34,7 +34,7 @@
   // flex-direction: column;
 
   h3 {
-    font-family: 'Gilroy-Regular';
+    font-family: "Gilroy-Regular";
     font-size: 1.2rem;
     text-align: center;
     color: white;
@@ -57,7 +57,7 @@
     font-size: var(--FontSm);
   }
   a {
-    font-family: 'Gilroy-Light';
+    font-family: "Gilroy-Light";
     display: block;
     // padding: 5px 30px;
     text-decoration: none;
@@ -81,21 +81,13 @@
 }
 @media (max-width: 815px) {
   .sidebar {
-    // background-color: var(--ltbackground);
     position: relative;
-    // top: 70px;
     padding-top: 20px;
     padding-bottom: 20px;
-    // margin: 0;
-    width: 100%;
+    width: 65%;
     max-height: 275px;
     z-index: 1;
     left: 0;
-    // margin-left: 0;
     margin: auto;
   }
-  // li {
-  //   margin-top: 0;
-  //   padding: 0;
-  // }
 }

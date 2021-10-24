@@ -44,13 +44,13 @@ const Herosection = () => {
   //     .from(heroMessage, 1, { x: -2000, ease: Power3.easeOut }, 0.6)
   //     .from(heroCTA, 1, { css: { opacity: 0, ease: Power3.easeOut } }, 1.5);
   // });
-  	// Create reference to store the DOM element containing the animation
-	const el = React.useRef(null);
-	const typed = React.useRef(null);
+  // Create reference to store the DOM element containing the animation
+  const el = React.useRef(null);
+  const typed = React.useRef(null);
 
   React.useEffect(() => {
     const options = {
-    	strings: [
+      strings: [
         'purpose.',
         'exploration.',
         'practicality.',
@@ -63,30 +63,30 @@ const Herosection = () => {
       startDelay: 400,
       loop: true,
     };
-    
+
     typed.current = new Typed(el.current, options);
-    
+
     return () => {
       typed.current.destroy(); // Destroys instance
-    }
-  }, [])
+    };
+  }, []);
 
   return (
-    <section class="hero">
-      <div id="react-root">
-      </div>
-      <div class="hero__image">
-      <video className="hero__video" hidecontrols autoPlay loop muted>
-          <source src={stream} type="video/mp4" />
+    <section class='hero'>
+      <div id='react-root'></div>
+      <div class='hero__image'>
+        <video className='hero__video' hidecontrols autoPlay loop muted>
+          <source src={stream} type='video/mp4' />
           Your browser does not support the video tag.
         </video>
         {/* <div class="hero__grid__one"></div>
         <div class="hero__grid__two"></div>
         <div class="hero__grid__three"></div> */}
       </div>
-      <div class="hero__text">
-        <h1>Path to serving AI with&nbsp;
-          <span class="hero__text__typewriter"ref={el} />
+      <div class='hero__text'>
+        <h1>
+          Path to serving AI with&nbsp;
+          <span class='hero__text__typewriter' ref={el} />
         </h1>
         <p>
           Take your monitoring to the new generation. Your personal Coralyze
@@ -94,9 +94,9 @@ const Herosection = () => {
           identification.
         </p>
         <p>Ready? Click below and OPT in queue for pre-alpha release.</p>
-        <div class="hero__button">
-          <Link to="/register">
-            <Button buttonSize="btn--wide" buttonColor="blue">
+        <div class='hero__button'>
+          <Link to='/register'>
+            <Button buttonSize='btn--wide' buttonColor='blue'>
               Register now!
             </Button>
           </Link>

@@ -376,7 +376,7 @@ const TechnicalSection = () => {
             </ul>
             <p>
               Once all steps above have completed, you will be redirected to the
-              Coralyze Dashboard where you see a notification will appear
+              Coralyze Dashboard where you will see a notification will appear
               showing you have sucessfully logged in.
             </p>
             <div class='technical__images'>
@@ -477,9 +477,9 @@ const TechnicalSection = () => {
                 results.
               </li>
               <li>
-                Once added and you've executed the{' '}
-                <a href='#CoralyzePackages'>Coralyze Scripts</a> you will being
-                to see results like below
+                Once added and you've executed the
+                <a href='#CoralyzePackages'>Coralyze Scripts</a> you will 
+                see dashboard data being populated like the image below
               </li>
               <div class='technical__images'>
                 <img
@@ -526,7 +526,7 @@ const TechnicalSection = () => {
           </article>
         </div>
         <div class='technical__content' id='CustomiseUI'>
-          <h2>CustomiseUI</h2>
+          <h2>Customise UI</h2>
           <article>
             <h3>Feature to come in the near future</h3>
             <p>

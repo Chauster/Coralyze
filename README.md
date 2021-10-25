@@ -234,17 +234,17 @@ These are the following screens and functionalities present in the application c
 These screens currently contain fully functional transformed data. As such, the next iteration of the Coralyze project will implement more features in the coming future.
 
 ### Functionality Screens
-#### [Landing Page](../src/pages/home.js)
+#### [Landing Page](../main/src/pages/home.js)
 
-#### [Register Page](../src/pages/register.js)
+#### [Register Page](../main/src/pages/register.js)
 
-#### [Login Page](../src/pages/login.js)
+#### [Login Page](../main/src/pages/login.js)
 
-#### [Reset Password Page](../src/pages/resetpassword.js)
+#### [Reset Password Page](../main/src/pages/resetpassword.js)
 
-#### [Forgot Password Page](../src/pages/forgotpassword.js)
+#### [Forgot Password Page](../main/src/pages/forgotpassword.js)
 
-#### [Dashboard Page](../src/pages/Dashboard.js)
+#### [Dashboard Page](../main/src/pages/Dashboard.js)
 
 ### Team Members
 #### Documentation Team:

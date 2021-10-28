@@ -176,102 +176,14 @@ This project contains the frontend and backend user interface Coralyze.
 │   │       style.css
 │   │
 │   ├───images
-│   │   │   404.svg
-│   │   │   404_v2.svg
-│   │   │   blob-desktop.svg
-│   │   │   company-banner.png
-│   │   │   contactus.svg
-│   │   │   contactusv2.svg
-│   │   │   CTA.svg
-│   │   │   CTAv2.svg
-│   │   │   Dashboard.PNG
-│   │   │   DashboardMockup.png
-│   │   │   DashboardShowcase.png
-│   │   │   DashboardShowcase.svg
-│   │   │   feature.svg
-│   │   │   Feature1.svg
-│   │   │   Feature2.svg
-│   │   │   Feature3.svg
-│   │   │   featurev2.svg
-│   │   │   featurev3.svg
-│   │   │   forgotpassword.svg
-│   │   │   Grids.svg
-│   │   │   Grids2.svg
-│   │   │   Group 13.png
-│   │   │   Group 13.svg
-│   │   │   icon-facebook.svg
-│   │   │   icon-github.svg
-│   │   │   icon-instagram.svg
-│   │   │   login.png
-│   │   │   loginimage.svg
-│   │   │   loginrightimage.svg
-│   │   │   logo-2.png
-│   │   │   logo-black.svg
-│   │   │   logo-blue.svg
-│   │   │   logo-white.svg
-│   │   │   logo.png
-│   │   │   mission.svg
-│   │   │   missionv2.svg
-│   │   │   new.png
-│   │   │   paper_plane.svg
-│   │   │   people.svg
-│   │   │   PhoneMockup.png
-│   │   │   S9MockUp.png
-│   │   │   saletags.svg
-│   │   │   stream-test.gif
-│   │   │   surveillance.svg
-│   │   │   team.svg
 │   │   │
 │   │   ├───carousel
-│   │   │       aws.png
-│   │   │       aws.svg
-│   │   │       coral.png
-│   │   │       express.png
-│   │   │       keras.png
-│   │   │       keras1.png
-│   │   │       mongo.svg
-│   │   │       nginx.png
-│   │   │       node.png
-│   │   │       node.svg
-│   │   │       php.png
-│   │   │       python.png
-│   │   │       reactjs.png
-│   │   │       tf.png
-│   │   │       tflite.jpg
-│   │   │       tflite.png
 │   │   │
 │   │   ├───Documentation
-│   │   │       tinker_edge_T_image1.jpg
-│   │   │       tinker_edge_T_image2.jpg
-│   │   │       tinker_edge_T_image3.jpg
-│   │   │       tinker_edge_T_image4.jpg
-│   │   │       tinker_edge_T_image5.jpg
-│   │   │       tinker_edge_T_image6.jpg
 │   │   │
 │   │   ├───icons
-│   │   │       arrow.svg
-│   │   │       download.png
-│   │   │       icon 1.png
-│   │   │       icon 2.png
-│   │   │       icon 3.png
-│   │   │       image 2.png
-│   │   │       image 3.png
-│   │   │       image 5.png
-│   │   │       policy.png
 │   │   │
 │   │   └───portraits
-│   │           army.jpg
-│   │           baolam.jpg
-│   │           big_kush.jpg
-│   │           cynan.jpg
-│   │           david.jpg
-│   │           defaultimg.jpg
-│   │           kishen.png
-│   │           long.jpg
-│   │           longle.png
-│   │           portrait.png
-│   │           saamir.jpg
-│   │           sam.jpg
 │   │
 │   ├───pages
 │   │       about.js
@@ -303,9 +215,6 @@ This project contains the frontend and backend user interface Coralyze.
 │   │       pagenotfound.css
 │   │
 │   └───videos
-│           0001-0500.webm
-│           video1.mp4
-│           video2.mp4
 │
 └───utilities
         errorResponse.js
@@ -324,13 +233,18 @@ These are the following screens and functionalities present in the application c
 
 These screens currently contain fully functional transformed data. As such, the next iteration of the Coralyze project will implement more features in the coming future.
 
-### Screens
-#### [Landing Page](../src/components/HomePage)
+### Functionality Screens
+#### [Landing Page](../main/src/pages/home.js)
 
-#### [Register Page](../src/components/Register/registerFormPage)
+#### [Register Page](../main/src/pages/register.js)
 
-#### [Login Page](../src/components/Login/)
+#### [Login Page](../main/src/pages/login.js)
 
+#### [Reset Password Page](../main/src/pages/resetpassword.js)
+
+#### [Forgot Password Page](../main/src/pages/forgotpassword.js)
+
+#### [Dashboard Page](../main/src/pages/Dashboard.js)
 
 ### Team Members
 #### Documentation Team:

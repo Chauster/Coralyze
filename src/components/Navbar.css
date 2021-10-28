@@ -67,6 +67,10 @@
   color: lightgray;
 }
 
+.nav__menu li a:hover {
+  opacity: 0.2;
+}
+
 .nav__links {
   color: #fff;
   display: flex;

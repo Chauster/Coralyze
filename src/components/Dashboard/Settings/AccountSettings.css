@@ -59,14 +59,14 @@
   margin-top: 10%;
 }
 
-li a {
+/* li a {
   text-decoration: none;
   transition: all 0.5s ease;
 }
 
 li a:hover {
   opacity: 0.4;
-}
+} */
 
 .settings__form {
   align-items: center;

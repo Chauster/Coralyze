@@ -1,0 +1,160 @@
+.procedure {
+  background-color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1720px;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  height: auto;
+}
+
+@media (max-width: 40em) {
+  .procedure {
+    text-align: left;
+  }
+
+  .procedure__intro h1 {
+    text-align: left;
+    margin-bottom: 2em;
+    font-size: 2rem;
+  }
+}
+
+.container__procedure__intro {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40em) {
+  .container__procedure__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 64em) {
+  .container__procedure__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.procedure__intro h1 {
+  font-family: 'Gilroy-Bold';
+  color: #3e74ff;
+}
+
+@media (min-width: 40em) {
+  .procedure__intro {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #3e74ff;
+  }
+
+  h1 {
+    font-size: 2.275rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 64em) {
+  .procedure__intro {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #3e74ff;
+  }
+
+  .procedure__intro h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}
+
+.procedure__intro__image img {
+  width: 100%;
+}
+
+@media (min-width: 40em) {
+  .procedure__intro__image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 64em) {
+  .procedure__intro__image img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.procedure__intro p {
+  color: #000;
+}
+
+@media (min-width: 40em) {
+  .procedure__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.procedure__item {
+  padding: 0.9375rem;
+  min-width: 150px;
+}
+
+@media (min-width: 40em) {
+  .procedure__item {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 64em) {
+  .procedure__item {
+    flex: 1;
+  }
+}
+
+.procedure__icon {
+  margin-bottom: 1.875rem;
+
+  img {
+    width: 30%;
+    height: auto;
+  }
+}
+
+@media (min-width: 64em) {
+  .procedure__icon {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.procedure__title {
+  font-family: 'Gilroy-Medium';
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.15;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 64em) {
+  .procedure__title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.procedure__description {
+  font-family: 'Gilroy-Light';
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #6a707e;
+}

@@ -31,9 +31,12 @@ import e from 'cors';
 import { GiConsoleController, GiEmptyChessboard } from 'react-icons/gi';
 
 const Dashboard = () => {
-  const [ChartData, setChartData] = useState(null);
+  const [ChartData, setChartData] = useState([null]);
   const [ChartDataTwo, setChartDataTwo] = useState(null);
   const [ChartDataThree, setChartDataThree] = useState(null);
+  const [cardData, setCardData] = useState([]);
+  const [cardDataTwo, setCardDataTwo] = useState([]);
+  const [cardDataThree, setCardDataThree] = useState([]);
   const [error, setError] = useState('');
   const [loaded, setLoaded] = useState(false);
   const [stateloaded, setstateLoaded] = useState(false);
@@ -113,6 +116,9 @@ const Dashboard = () => {
           setChartData(data);
           setChartDataTwo(datatwo);
           setChartDataThree(datathree);
+          setCardData(data);
+          setCardDataTwo(datatwo);
+          setCardDataThree(datathree);
           console.log(ChartData);
           console.log(ChartDataTwo);
           console.log(ChartDataThree);
@@ -217,6 +223,19 @@ const Dashboard = () => {
     );
   };
 
+  const displayChartCards = (posts) => {
+    if (!posts.length) return null;
+
+    return posts.map((post, index) => (
+      <div key={index}>
+        <h3>{post.male}</h3>
+        <h3>{post.female}</h3>
+        <h3>{post.month}</h3>
+        <h3>{post.detections}</h3>
+      </div>
+    ));
+  };
+
   const cardShow = () => {
     return (
       <div className='row__devices'>
@@ -246,10 +265,14 @@ const Dashboard = () => {
             </Button>
         </div>
       </form> */}
+      {/* <div className="dashboard__cards">
+          {displayChartCards({ChartData})}
+        </div> */}
       <div class='dashboard'>
         <div class='dashboard__title'>
           <h3>Dashboard.</h3>
         </div>
+
         <div class='dashboard__graph'>
           <div class='dashboard__graph__one__subheading'>
             <div class='dashboard__graph__one__buttons'></div>
@@ -375,6 +398,57 @@ const Dashboard = () => {
                 </Button>
             </div>
           </form> */}
+          <div class='dashboard__section__title'>
+            <h3>Month Overview.</h3>
+          </div>
+          <div className='dashboard__card__grid'>
+            {cardData.map((card) => (
+              <>
+                <div class='dashboard__card__item'>
+                  <div class='dashboard__card__icon'></div>
+                  <div class='dashboard__card__title'>{card.month}</div>
+                  <div class='dashboard__card__subtitle'>Detections</div>
+                  <div class='dashboard__card__description'>
+                    <p>{card.detections}</p>
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
+          <div class='dashboard__section__title'>
+            <h3>Age Overview.</h3>
+          </div>
+          <div className='dashboard__card__grid'>
+            {cardDataTwo.map((card) => (
+              <>
+                <div class='dashboard__card__item'>
+                  <div class='dashboard__card__icon'></div>
+                  <div class='dashboard__card__title'>{card.agegroup}</div>
+                  <div class='dashboard__card__subtitle'>Agegroup</div>
+                  <div class='dashboard__card__description'>
+                    <p>{card.detections}</p>
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
+          <div class='dashboard__section__title'>
+            <h3>Gender Overview.</h3>
+          </div>
+          <div className='dashboard__card__grid'>
+            {cardDataThree.map((card) => (
+              <>
+                <div class='dashboard__card__item'>
+                  <div class='dashboard__card__icon'></div>
+                  <div class='dashboard__card__title'>{card.gender}</div>
+                  <div class='dashboard__card__subtitle'>Gender</div>
+                  <div class='dashboard__card__description'>
+                    <p>{card.detections}</p>
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
         </div>
       </div>
     </div>

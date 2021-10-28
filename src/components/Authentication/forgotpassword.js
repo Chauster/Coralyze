@@ -3,11 +3,20 @@ import axios from 'axios';
 import './forgotpassword.scss';
 import { Button } from '../Button';
 import rightimage from '../../images/forgotpassword.svg';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Forgotpassword = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+  const emailSentSuccess = () => {
+    toast.success("Email sent")
+  }
+
+  const failed = () => {
+    toast.error("Failed to send", {position: toast.POSITION.TOP_CENTER})
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +35,9 @@ const Forgotpassword = () => {
       );
 
       setSuccess(data.data);
+      emailSentSuccess();
     } catch (error) {
+      failed();
       setError(error.response.data.error);
       setEmail('');
       setTimeout(() => {

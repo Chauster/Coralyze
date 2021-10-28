@@ -5,7 +5,8 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import { Button } from '../Button';
 import rightimage from '../../images/loginrightimage.svg';
 import axios from 'axios';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './resetpassword.scss';
 
 const Resetpassword = ({ history, match }) => {
@@ -13,6 +14,14 @@ const Resetpassword = ({ history, match }) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+  const PasswordResetSuccess = () => {
+    toast.success("Password Resetted")
+  }
+
+  const failed = () => {
+    toast.error("Failed to reset password", {position: toast.POSITION.TOP_CENTER})
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -83,9 +92,11 @@ const Resetpassword = ({ history, match }) => {
             );
           }
         });
+        PasswordResetSuccess();
       setSuccess(data.data);
     } catch (error) {
       // testing
+      failed();
     }
   };
 

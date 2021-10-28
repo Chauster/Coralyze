@@ -31,7 +31,6 @@ const LoginFormSection = () => {
   const failed = () => {
     toast.error("Invalid Credentials", {position: toast.POSITION.TOP_CENTER});
   }
- 
 
   let handleUsernameChange = (event) => {
     setUsername(event.target.value);

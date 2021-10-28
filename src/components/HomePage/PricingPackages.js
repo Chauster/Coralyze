@@ -25,8 +25,8 @@ const PricingPackages = () => {
                   <p>per month</p>
                   <ul className='pricing__container-features'>
                     <li>500 MB Storage</li>
-                    <li>2% Cash Back</li>
-                    <li>1 Account</li>
+                    <li>Access to beta builds</li>
+                    <li>1 Device</li>
                   </ul>
                   <Button buttonSize='btn--wide' buttonColor='primary'>
                     Choose Plan
@@ -43,8 +43,8 @@ const PricingPackages = () => {
                   <p>per month</p>
                   <ul className='pricing__container-features'>
                     <li>2 GB Storage</li>
-                    <li>3.5% Cash Back</li>
-                    <li>5 Accounts</li>
+                    <li>Access to alpha builds</li>
+                    <li>5 Devices</li>
                   </ul>
                   <Button buttonSize='btn--wide' buttonColor='blue'>
                     Choose Plan
@@ -60,9 +60,9 @@ const PricingPackages = () => {
                   <h4>$59.99</h4>
                   <p>per month</p>
                   <ul className='pricing__container-features'>
-                    <li>50 GB Storage</li>
-                    <li>5% Cash Back</li>
-                    <li>Unlimited Accounts</li>
+                    <li>10 GB Storage</li>
+                    <li>Access to alpha builds</li>
+                    <li>Unlimited Devices</li>
                   </ul>
                   <Button buttonSize='btn--wide' buttonColor='primary'>
                     Choose Plan

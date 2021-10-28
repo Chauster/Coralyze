@@ -60,7 +60,7 @@ const Featuresection = () => {
               <ul class="feature__intro__list">
                 <li class="feature__intro__list__item">Age Detections</li>
                 <li class="feature__intro__list__item">Gender Detections</li>
-                <li class="feature__intro__list__item">Mask Detections</li>
+                <li class="feature__intro__list__item"><strike>Mask Detections</strike> Feature coming soon</li>
               </ul>
             </div>
             <div class="feature__intro__image">

@@ -17,25 +17,28 @@ const {
   getchartdata,
   addDevice,
   getdevicedata,
+} = require('../controllers/auth');
 
-} = require("../controllers/auth");
+router.route('/login').post(login);
 
-router.route("/login").post(login);
+router.route('/register').post(register);
 
-router.route("/register").post(register);
+router.route('/forgotpassword').post(forgotpassword);
 
-router.route("/forgotpassword").post(forgotpassword);
+router.route('/resetpassword/:resetToken').put(resetpassword);
 
-router.route("/resetpassword/:resetToken").put(resetpassword);
+router.route('/clientID').post(clientID);
 
-router.route("/clientID").post(clientID);
+router.route('/insertDefaultChartData').post(insertDefaultChartData);
 
-router.route("/insertDefaultChartData").post(insertDefaultChartData);
+router.route('/getchartdata/').post(getchartdata);
 
-router.route("/getchartdata/").post(getchartdata);
+router.route('/addDevice').post(addDevice);
 
-router.route("/addDevice").post(addDevice);
+router.route('/getdevicedata/').post(getdevicedata);
 
-router.route("/getdevicedata/").post(getdevicedata);
+// router.route('/removeDevice/:_id').delete(removeDevice);
+
+// router.route('/updateDevice/').post(updateDevice);
 
 module.exports = router;

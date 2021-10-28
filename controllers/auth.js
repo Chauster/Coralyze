@@ -13,7 +13,7 @@ exports.register = async (req, res, next) => {
       return res.status(400).json({
         success: false,
         error: 'User already exists, please login or reset your password',
-        response: 'failed'
+        response: 'failed',
       });
     }
     const user = await User.create({
@@ -744,6 +744,39 @@ exports.getdevicedata = async (req, res, next) => {
     next(error);
   }
 };
+
+// exports.updateDevice = async (req, res) => {
+//   const {_id, dev_id, device_name, device_ip} = req.body;
+
+//   try {
+//     const device = await User.findByIdAndUpdate(
+//       { _id },
+//       {
+//         $pull: {
+//           device_data: {
+//             _id: dev_id,
+//             name: device_name,
+//             ip_add: device_ip,
+//           }
+//         }
+//       });
+//       if (!device) {
+//         res.status(400).json({
+//           success: false,
+//           error: 'Could not find user',
+//         });
+//       }
+//       sendResponse(device, 200, res);
+//     } catch (error) {
+//       res.status(500).json({
+//         success: false,
+//         error: error.message,
+//     });
+// };
+
+// exports.removeDevice = async (req, res) => {
+
+// };
 
 const sendToken = (user, statusCode, res) => {
   const token = user.getJWTSignedToken(); // Encodes token based on the passed in data

@@ -13,7 +13,6 @@ function DeviceManagement() {
   const [device_ip, setDeviceIP] = useState('');
   const [devices, setDevices] = useState([]);
   const [error, setError] = useState('');
-  // const [current_id, setCurrent_id] = useState('');
 
   const config = {
     header: {
@@ -42,15 +41,6 @@ function DeviceManagement() {
   const clearState = () => {
     setDeviceName('');
     setDeviceIP('');
-  };
-
-  // store id, pass to next page
-  let storeID = (event) => {
-    // alert('Selected Device: ' + event.target.id);
-    // store in localStorage
-    // key is _id, value is name and ip_add
-    localStorage.setItem('dev_id', event.target.id);
-    // get from localStorage in next page (edit or remove that object -> update in mongoDB Atlas)
   };
 
   const handleSubmit = async (e) => {
@@ -96,39 +86,30 @@ function DeviceManagement() {
         config
       );
       setDevices(data.deviceData);
-      console.log(data.deviceData);
+      // console.log(data.deviceData);
     }
     fetchDevices();
   }, [devices]);
 
-  function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute(
-      'href',
-      'data:text/plain;charset=utf-8,' + encodeURIComponent(text)
-    );
-    element.setAttribute('download', filename);
+  let removeDevice = () => {
+    // get localStorage device_id
+    // remove id from devices array
+    const _id = localStorage.getItem('clientID');
+    const removableDevice = localStorage.getItem('dev_id');
+    // create route to remove device
+    alert(_id, removableDevice);
+  };
 
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
-  }
-
-  const clientID = localStorage.getItem('clientID');
-  // console.log(clientID);
-  const downloadPackage = (e) => {
-    e.preventDefault();
-
-    download('clientID.txt', clientID);
-
-    // https://drive.google.com/uc?export=download&id=
-    var url =
-      'https://drive.google.com/uc?export=download&id=18Fijin_woUoulXxzYfyd2ptnMP4Z9Axs'; // data_ex.py / zipped
-
-    window.open(url, '_blank');
+  let handleUpdate = () => {
+    // async function fetchDevices() {
+    //   const _id = localStorage.getItem('clientID');
+    //   const updateableDevice = localStorage.getItem('dev_id');
+    //   const { data } = await axios.post(
+    //     '/users/updateDevice/',
+    //     { _id, updateableDevice, device_name, device_ip },
+    //     config
+    //   );
+    // }
   };
 
   return (
@@ -137,43 +118,33 @@ function DeviceManagement() {
         <div className="device-mgmt__container-header">Device Management</div>
         <ul className="dev__list">
           {/* device component */}
-          {Object.keys(devices).map((device) => (
-            <li className="dev__box">
-              <Link to="/devicemodify">
-                <span
-                  className="dev__icon"
-                  id={devices[device]._id}
-                  onClick={storeID}
-                >
-                  <FiCpu />
-                </span>
-                <br />
-                <span
-                  key={devices[device]._id}
-                  className="dev__name"
-                  id={devices[device]._id}
-                  onClick={storeID}
-                >
-                  {devices[device].name}
-                </span>
-                <br />
-                <span
-                  key={devices[device]._id}
-                  className="dev__ip"
-                  id={devices[device]._id}
-                  onClick={storeID}
-                >
-                  {devices[device].ip_add}
-                </span>
-              </Link>
-            </li>
-          ))}
+          {Object.keys(devices)
+            .filter(
+              (dev) => devices[dev]._id === localStorage.getItem('dev_id')
+            )
+            .map((device) => {
+              return (
+                <li className="dev__box">
+                  <span className="dev__icon">
+                    <FiCpu />
+                  </span>
+                  <br />
+                  <span key={devices[device]._id} className="dev__name">
+                    {devices[device].name}
+                  </span>
+                  <br />
+                  <span key={devices[device]._id} className="dev__ip">
+                    {devices[device].ip_add}
+                  </span>
+                </li>
+              );
+            })}
         </ul>
         <div className="device-mgmt__form">
-          <form autoComplete="off" className="form" onSubmit={handleSubmit}>
+          <form autoComplete="off" className="form" onSubmit={handleUpdate}>
             <div className="device-mgmt__form-inputs">
               <label htmlFor="name" className="device-mgmt__label">
-                Device Name
+                Updated Device Name
               </label>
               <input
                 required
@@ -181,7 +152,7 @@ function DeviceManagement() {
                 id="name"
                 type="text"
                 name="name"
-                placeholder="Enter device name"
+                placeholder="Enter new device name"
                 className="device-mgmt__form-input"
                 value={device_name}
                 onChange={handleDeviceNameChange}
@@ -189,7 +160,7 @@ function DeviceManagement() {
             </div>
             <div className="device-mgmt__form-inputs">
               <label htmlFor="name" className="device-mgmt__label">
-                Device IP
+                Updated Device IP
               </label>
               <input
                 required
@@ -197,7 +168,7 @@ function DeviceManagement() {
                 id="ip_add"
                 type="text"
                 name="ip_add"
-                placeholder="Enter ip address"
+                placeholder="Enter new ip address"
                 className="device-mgmt__form-input"
                 value={device_ip}
                 onChange={handleDeviceIPChange}
@@ -209,39 +180,21 @@ function DeviceManagement() {
               Add Device
             </Button> */}
                 <button type="button" class="button" type="submit">
-                  <span class="button__text">Add Device</span>
-                  {/* <span class="button__icon">
-                    <ion-icon name="cloud-download-outline"></ion-icon>
-                    <img
-                      src={downloadIcon}
-                      alt=""
-                      width="25px"
-                      height="25px"
-                    ></img>
-                  </span> */}
+                  <span class="button__text">Update Device</span>
                 </button>
               </div>
               <div className="device-mgmt__button-container">
-                <button type="button" class="button" onClick={downloadPackage}>
-                  <span class="button__text">
-                    Download
-                    <br />
-                    Coralyze Dependencies
-                  </span>
-                  <span class="button__icon">
-                    <ion-icon name="cloud-download-outline"></ion-icon>
-                    <img
-                      src={downloadIcon}
-                      alt=""
-                      width="25px"
-                      height="25px"
-                    ></img>
-                  </span>
+                {/* <Button buttonSize="btn--medium" buttonColor="primary" type="submit">
+              Add Device
+            </Button> */}
+                <button type="button" class="button" onClick={removeDevice}>
+                  <span class="button__text">Remove Device</span>
                 </button>
               </div>
             </div>
             <span className="dev__note">
-              To edit or remove a device, click on the devices above.
+              To add a new device, click on the 'Device Management' link on the
+              sidebar.
             </span>
           </form>
         </div>

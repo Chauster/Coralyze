@@ -12,7 +12,7 @@
   // top: 80px;
   top: 20px;
   // left: 7%;
-  width: 200px;
+  width: 220px;
   height: auto;
   position: fixed;
 
@@ -137,7 +137,12 @@
     margin: 10px;
     top: auto;
     bottom: 0;
+    margin: auto;
     justify-content: center;
+
+    ul {
+      align-items: center;
+    }
 
     li {
       margin-top: 0;

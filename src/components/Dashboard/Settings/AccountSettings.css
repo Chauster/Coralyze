@@ -1,15 +1,9 @@
 .settings__content {
-  padding: 15px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  /* TO REMOVE AFTER NAVBAR IS RESPONSIVE */
-  left: 280px;
+  margin: 20px;
+  /* padding: 10px; */
+  left: 220px;
   position: relative;
-  width: 50%;
-  /* TO REMOVE AFTER NAVBAR IS RESPONSIVE */
-  /* display: grid;
-    column-gap: 15px;
-    grid-template-columns: 1fr 3fr 1.5fr; */
+  width: calc(100% - 240px);
 }
 
 .settings__header {
@@ -145,4 +139,17 @@ li a:hover {
   margin-top: 10px;
   width: 100%;
   /* padding: 10px; */
+}
+
+/* for smaller screen sizes */
+@media screen and (max-width: 960px) {
+  .settings__content {
+    margin: 10px;
+    width: 100%;
+    /* padding: 10px; */
+    position: fixed;
+    left: 0;
+    /* right: 0; */
+    width: 100%;
+  }
 }
